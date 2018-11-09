@@ -24,6 +24,35 @@ android {
             signingConfig signingConfigs.release
         }
     }
+
+    // The different flavor Dimensiones are added
+    // They are used full to create several
+    flavorDimensions "empresa"
+
+    // The different "tipos de productos" are added
+    productFlavors {
+        formacajas {
+            dimension "empresa"
+            applicationIdSuffix ".formacajas"
+            versionNameSuffix "-formacajas"
+        }
+        modulaser {
+            dimension "empresa"
+            applicationIdSuffix ".modulaser"
+            versionNameSuffix "-modulaser"
+        }
+        proshel {
+            dimension "empresa"
+            applicationIdSuffix ".proshel"
+            versionNameSuffix "-proshel"
+        }
+        estra {
+            dimension "empresa"
+            applicationIdSuffix ".estra"
+            versionNameSuffix "-estra"
+        }
+
+    }
 }
 
 // To configure an automatic signature
