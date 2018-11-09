@@ -29,7 +29,7 @@
 <dimen name="size_text_resultado_layout_variable">250dp</dimen> <!-- tamaño del layout de resultado -->
 
 <dimen name="size_titulos_secciones_variable">24sp</dimen> <!-- Titulos texto -->
-
+<dimen name="size_logo_2">180dp</dimen>  <!-- Define el tamaño del logo secundario -->
 
 
 <!-- Tamaño para una tablet -->
