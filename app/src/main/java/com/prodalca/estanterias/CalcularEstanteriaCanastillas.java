@@ -11,8 +11,11 @@ import android.widget.TextView;
 import android.view.View.OnClickListener;
 import android.view.View.OnFocusChangeListener;
 
+// This class is used to calculate the price of a given shelf
 public class CalcularEstanteriaCanastillas extends AppCompatActivity implements OnClickListener, OnFocusChangeListener {
 
+    // In the following, the elements associated to the user interface are declared
+    // These are used by the user to introduce the properties of the shelf
     Button menosAltura;
     Button masAltura;
     TextView textoAlturaSelec;
@@ -58,8 +61,11 @@ public class CalcularEstanteriaCanastillas extends AppCompatActivity implements 
     Button calcularEstCanastillas;
     TextView textoResultado;
 
+    // This creates an object of the class estanteriaCanastillas
+    // The shelf starts with a configuration of 1,94 m "altura".
     estanteriaCanastillas estanteria = new estanteriaCanastillas("1.94", "1", "4", "3", "1", false, false);
 
+    // This counters allow one to move around the possible values of the shelf characteristics
     int contador_altura = 2;
     int contador_cuerpos = Integer.valueOf(estanteria.getCuerpos());
     int contador_posiciones = Integer.valueOf(estanteria.getPosiciones());
@@ -69,6 +75,7 @@ public class CalcularEstanteriaCanastillas extends AppCompatActivity implements 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        // The layout activity_calcular_estanteria_canastillas is associated here
         setContentView(R.layout.activity_calcular_estanteria_canastillas);
 
         TextView textView = new TextView(this);
@@ -142,8 +149,9 @@ public class CalcularEstanteriaCanastillas extends AppCompatActivity implements 
         checkBoxCostado.setOnClickListener(this);
 
         /* Se hace este "setOnFocusChangeListener" con el fin de que con solo seleccionar una de
-         * opciones de los campos de textos, el resultado total de la estanteria se borra. De este
-         * modo se obliga al usuario a actualizar el resultado presionando el boton CALCULAR  */
+         * opciones de los campos de textos, el resultado total de la estanteria se borra.
+         * Ver la funcion "onFocusChange". De este modo se obliga al usuario a actualizar el
+         * resultado presionando el boton CALCULAR  */
 
         cuadroExtEst1Selec.setOnFocusChangeListener(this);
         cuadroExtEst2Selec.setOnFocusChangeListener(this);
@@ -175,6 +183,7 @@ public class CalcularEstanteriaCanastillas extends AppCompatActivity implements 
          */
         textoResultado.setText("-");
 
+        // It is detected which button was pressed and according to this, some changes are performed
         switch (v.getId()) {
             case R.id.menosAltura:
                 if(contador_altura > 0){
@@ -258,8 +267,11 @@ public class CalcularEstanteriaCanastillas extends AppCompatActivity implements 
                     checkBoxAceroInoxidable.setChecked(false);
                 break;
 
+            // The price of the shelf is calculated here
             case R.id.calcularEstCanastillas:
 
+                // This part goes through all fields related to additional elements of the shelf and
+                // it refreshes the current amount selected by the user
                 estanteria.actCuadroExtEst1Selec(cuadroExtEst1Selec.getText().toString());
                 estanteria.actCuadroExtEst2Selec(cuadroExtEst2Selec.getText().toString());
                 estanteria.actCuadroExtEst3Selec(cuadroExtEst3Selec.getText().toString());
@@ -267,6 +279,8 @@ public class CalcularEstanteriaCanastillas extends AppCompatActivity implements 
                 estanteria.actCuadroExtEst5Selec(cuadroExtEst5Selec.getText().toString());
                 estanteria.actTravesanoEtxModularSelec(travesanoEtxModularSelec.getText().toString());
 
+                // This part goes through all fields related to additional elements of the shelf and
+                // it refreshes the current amount selected by the user
                 estanteria.actCanastilla13Perforada(canastillas13PerforadaSelec.getText().toString());
                 estanteria.actCanastilla13Cerrada(canastillas13CerradaSelec.getText().toString());
                 estanteria.actCanastilla18Perforada(canastillas18PerforadaSelec.getText().toString());
@@ -279,11 +293,14 @@ public class CalcularEstanteriaCanastillas extends AppCompatActivity implements 
                 estanteria.actCanastilla41Cerrada(canastillas41CerradaSelec.getText().toString());
                 estanteria.actTapaNormatizada(tapaNormatizadaSelec.getText().toString());
 
+                // It calculates the amount of elements that are necessary to build the shelf
                 estanteria.calcularCantidades(checkBoxAceroInoxidable.isChecked(),checkBoxCostado.isChecked());
+                // It calculates the price of the shelf
                 estanteria.calcularPrecio(checkBoxAceroInoxidable.isChecked(),checkBoxCostado.isChecked());
 
+                // It gives an format to the price to be displayed
                 estanteria.formatoPrecio(estanteria.getPrecioTotalEstanteria());
-
+                // It displays the calculated price of the shelf
                 textoResultado.setText(estanteria.getPrecioTotalEstanteria());
 
                 break;
@@ -295,11 +312,13 @@ public class CalcularEstanteriaCanastillas extends AppCompatActivity implements 
         // No es necesario actualizar contador_altura ya que este es el mismo que controla los otro
         // estados
 
+        // This is necessary for following clicks
         contador_cuerpos = Integer.valueOf(estanteria.getCuerpos());
         contador_posiciones = Integer.valueOf(estanteria.getPosiciones());
         contador_cuadro_u = Integer.valueOf(estanteria.getCuadroU());
         contador_modulos = Integer.valueOf(estanteria.getModulos());
 
+        // It refreshes the new values of the input parameter (given by the user)
         textoAlturaSelec.setText(estanteria.getAltura());
         textoCuerposSelec.setText(estanteria.getCuerpos());
         textoPosicionesSelec.setText(estanteria.getPosiciones());
@@ -308,6 +327,8 @@ public class CalcularEstanteriaCanastillas extends AppCompatActivity implements 
 
     }
 
+    // If an additional element is selected, the result field is "deleted" with "-".
+    // In this way, the user has to press the button "Calcular" again.
     @Override
     public void onFocusChange(View v, boolean hasFocus) {
         textoResultado.setText("-");

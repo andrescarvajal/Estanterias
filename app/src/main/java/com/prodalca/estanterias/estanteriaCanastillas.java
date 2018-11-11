@@ -6,22 +6,29 @@ package com.prodalca.estanterias;
 
 public class estanteriaCanastillas {
 
-    //declaración de atributos
+    // Declaración de atributos. The following variables are the properties of a shelf
+    // According to this properties, the price of the shelf is going to be calculated
+
+    // These parameters are introduced by the user and the amount of elements are calculated according to these parameters
     private String altura, cuerpos, posiciones, cuadroU, modulos;
     private Boolean aceroInoxidable, costado;
     private int numPosicionesMin, numPosicionesMax;
 
+    // Amount of the elements necessary to build the shelf
     private int cant_parales, cant_travesanos, cant_tornillos_40,
             cant_tornillos_60, cant_tuerca_lujo, cant_bota_cuadrada, cant_tapon_cuadrado;
     private float cant_cuadroU;
 
+    // Price of the elements
     private String precio_total_parales, precio_total_cuadroU, precio_total_travesanos,
             precio_total_tornillos_40, precio_total_tornillos_60, precio_total_tuerca_lujo,
             precio_total_bota_cuadrada, precio_total_tapon_cuadrado, precio_total_estanteria;
 
+    // These amounts are introduced by the user and the prices are calculated
     private String cant_cuadro_ext_est_1, cant_cuadro_ext_est_2, cant_cuadro_ext_est_3,
         cant_cuadro_ext_est_4, cant_cuadro_ext_est_5, cant_travesano_ext_mod;
 
+    // These amounts are introduced by the user and the prices are calculated
     private String cant_canastilla_13_perf, cant_canastilla_13_cerr,
             cant_canastilla_18_perf, cant_canastilla_18_cerr,
             cant_canastilla_25_perf, cant_canastilla_25_cerr,
@@ -29,9 +36,11 @@ public class estanteriaCanastillas {
             cant_canastilla_41_perf, cant_canastilla_41_cerr,
             cant_tapa_normatizada;
 
+    // Price of the elements
     private int precio_total_cuadro_ext_est_1, precio_total_cuadro_ext_est_2, precio_total_cuadro_ext_est_3,
             precio_total_cuadro_ext_est_4, precio_total_cuadro_ext_est_5, precio_total_travesano_ext_mod;
 
+    // Price of the elements
     private int precio_total_canastilla_13_perf, precio_total_canastilla_13_cerr,
             precio_total_canastilla_18_perf, precio_total_canastilla_18_cerr,
             precio_total_canastilla_25_perf, precio_total_canastilla_25_cerr,
@@ -39,7 +48,7 @@ public class estanteriaCanastillas {
             precio_total_canastilla_41_perf, precio_total_canastilla_41_cerr,
             precio_total_tapa_normatizada;
 
-    //declaración de constructor
+    // Declaración de constructor. Initial properties of the shelf
     public estanteriaCanastillas(String altura, String cuerpos, String posiciones, String cuadroU,
                                  String modulos, Boolean aceroInoxidable, Boolean costado) {
         this.altura = altura;
@@ -50,6 +59,7 @@ public class estanteriaCanastillas {
         this.aceroInoxidable = aceroInoxidable;
         this.costado = costado;
 
+        // The shelf starts with a configuration of 1,94 m
         this.numPosicionesMin = 4;
         this.numPosicionesMax = 13;
 
@@ -112,8 +122,9 @@ public class estanteriaCanastillas {
         this.precio_total_estanteria = "0";
     }
 
-    //declaración de métodos
+    // Declaración de métodos
 
+    // Declare "getters"
     public String getAltura(){
         return this.altura;
     }
@@ -177,6 +188,7 @@ public class estanteriaCanastillas {
         return this.precio_total_estanteria;
     }
 
+    // Declare "setters"
     public void actAltura(String nuevoAltura){ this.altura = nuevoAltura; }
     public void actCuerpos(String nuevoCuerpos){ this.cuerpos = nuevoCuerpos; }
     public void actPosiciones(String nuevoPosiciones){ this.posiciones = nuevoPosiciones; }
@@ -256,6 +268,7 @@ public class estanteriaCanastillas {
         if(nuevoTapaNormatizada.isEmpty()){ this.cant_tapa_normatizada = "0"; }
         else { this.cant_tapa_normatizada = nuevoTapaNormatizada; } }
 
+    // This refreshes the shelf but it lets the values of "cuerpos" unchanged.
     public void actEstanteriaCanastillas(int estado) {
         if(estado == 0){
             this.altura = "0.90";
