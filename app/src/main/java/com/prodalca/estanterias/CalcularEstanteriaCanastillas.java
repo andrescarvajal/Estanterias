@@ -309,15 +309,6 @@ public class CalcularEstanteriaCanastillas extends AppCompatActivity implements 
                 break;
         }
 
-        // No es necesario actualizar contador_altura ya que este es el mismo que controla los otro
-        // estados
-
-        // This is necessary for following clicks
-        contador_cuerpos = Integer.valueOf(estanteria.getCuerpos());
-        contador_posiciones = Integer.valueOf(estanteria.getPosiciones());
-        contador_cuadro_u = Integer.valueOf(estanteria.getCuadroU());
-        contador_modulos = Integer.valueOf(estanteria.getModulos());
-
         // It refreshes the new values of the input parameter (given by the user)
         textoAlturaSelec.setText(estanteria.getAltura());
         textoCuerposSelec.setText(estanteria.getCuerpos());
