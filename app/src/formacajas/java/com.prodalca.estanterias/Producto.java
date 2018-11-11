@@ -7,10 +7,11 @@ package com.prodalca.estanterias;
 public class Producto {
 
     //declaración de atributos
-    private String nombre, precio, ref, unidad;
+    private String nombre, ref, unidad;
+    private Double precio;
 
     //declaración de constructor
-    public Producto(String nombre, String precio, String ref, String unidad) {
+    public Producto(String nombre, Double precio, String ref, String unidad) {
         this.nombre = nombre;
         this.precio = precio;
         this.ref = ref;
@@ -21,7 +22,7 @@ public class Producto {
     public String getNombre(){
         return this.nombre;
     }
-    public String getPrecio(){
+    public Double getPrecio(){
         return this.precio;
     }
     public String getRef(){
@@ -31,22 +32,17 @@ public class Producto {
         return this.unidad;
     }
 
+    public Double precioProd() { return Double.valueOf(precio);}
 
-    public String precioProd() {
-        return String.valueOf(precio);
-    }
-
-    public void actPrecio(String nuevoPrecio) {
-        this.precio = nuevoPrecio;
-    }
+    public void actPrecio(Double nuevoPrecio) { this.precio = nuevoPrecio;}
 
     // Estanteria canastillas (convencional)
 
-    public static Producto paral_090 = new Producto("Parales 0,90 m",   "12706", "TL088", "Unidad");
-    public static Producto paral_146 = new Producto("Parales 1,46 m",   "18063", "TL145", "Unidad");
-    public static Producto paral_194 = new Producto("Parales 1,94 m",   "21279", "TL099", "Unidad");
-    public static Producto paral_240 = new Producto("Parales 2,40 m",   "32459", "TL013", "Unidad");
-    public static Producto cuadro_u = new Producto("Cuadro unión",      "22580", "TL100", "Unidad");
+    public static Producto paral_090 = new Producto("Parales 0,90 m",   12706.0, "TL088", "Unidad");
+    public static Producto paral_146 = new Producto("Parales 1,46 m",   18063.0, "TL145", "Unidad");
+    public static Producto paral_194 = new Producto("Parales 1,94 m",   21279.0, "TL099", "Unidad");
+    public static Producto paral_240 = new Producto("Parales 2,40 m",   32459.0, "TL013", "Unidad");
+    public static Producto cuadro_u = new Producto("Cuadro unión",      "22580.0, "TL100", "Unidad");
     public static Producto travesano = new Producto("Travesaño",        "7501", "TL146", "Unidad");
 
     public static Producto bota_cuadrada = new Producto("Bota cuadrada de 3/4", "126", "MP065", "Unidad");
