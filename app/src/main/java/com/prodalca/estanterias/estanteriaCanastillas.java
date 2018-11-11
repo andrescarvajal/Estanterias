@@ -17,10 +17,10 @@ public class estanteriaCanastillas {
     // Amount of the elements necessary to build the shelf
     private int cant_parales, cant_travesanos, cant_tornillos_40,
             cant_tornillos_60, cant_tuerca_lujo, cant_bota_cuadrada, cant_tapon_cuadrado;
-    private float cant_cuadroU;
+    private Double cant_cuadroU;
 
     // Price of the elements
-    private String precio_total_parales, precio_total_cuadroU, precio_total_travesanos,
+    private Double precio_total_parales, precio_total_cuadroU, precio_total_travesanos,
             precio_total_tornillos_40, precio_total_tornillos_60, precio_total_tuerca_lujo,
             precio_total_bota_cuadrada, precio_total_tapon_cuadrado, precio_total_estanteria;
 
@@ -37,11 +37,11 @@ public class estanteriaCanastillas {
             cant_tapa_normatizada;
 
     // Price of the elements
-    private int precio_total_cuadro_ext_est_1, precio_total_cuadro_ext_est_2, precio_total_cuadro_ext_est_3,
+    private Double precio_total_cuadro_ext_est_1, precio_total_cuadro_ext_est_2, precio_total_cuadro_ext_est_3,
             precio_total_cuadro_ext_est_4, precio_total_cuadro_ext_est_5, precio_total_travesano_ext_mod;
 
     // Price of the elements
-    private int precio_total_canastilla_13_perf, precio_total_canastilla_13_cerr,
+    private Double precio_total_canastilla_13_perf, precio_total_canastilla_13_cerr,
             precio_total_canastilla_18_perf, precio_total_canastilla_18_cerr,
             precio_total_canastilla_25_perf, precio_total_canastilla_25_cerr,
             precio_total_canastilla_33_perf, precio_total_canastilla_33_cerr,
@@ -64,7 +64,7 @@ public class estanteriaCanastillas {
         this.numPosicionesMax = 13;
 
         this.cant_parales = 0;
-        this.cant_cuadroU = 0;
+        this.cant_cuadroU = 0.0;
         this.cant_travesanos = 0;
         this.cant_tornillos_40 = 0;
         this.cant_tornillos_60 = 0;
@@ -72,14 +72,14 @@ public class estanteriaCanastillas {
         this.cant_bota_cuadrada = 0;
         this.cant_tapon_cuadrado = 0;
 
-        this.precio_total_parales = "0";
-        this.precio_total_cuadroU = "0";
-        this.precio_total_travesanos = "0";
-        this.precio_total_tornillos_40 = "0";
-        this.precio_total_tornillos_60 = "0";
-        this.precio_total_tuerca_lujo = "0";
-        this.precio_total_bota_cuadrada = "0";
-        this.precio_total_tapon_cuadrado = "0";
+        this.precio_total_parales = 0.0;
+        this.precio_total_cuadroU = 0.0;
+        this.precio_total_travesanos = 0.0;
+        this.precio_total_tornillos_40 = 0.0;
+        this.precio_total_tornillos_60 = 0.0;
+        this.precio_total_tuerca_lujo = 0.0;
+        this.precio_total_bota_cuadrada = 0.0;
+        this.precio_total_tapon_cuadrado = 0.0;
 
         this.cant_cuadro_ext_est_1 = "0";
         this.cant_cuadro_ext_est_2 = "0";
@@ -100,26 +100,26 @@ public class estanteriaCanastillas {
         this.cant_canastilla_41_cerr = "0";
         this.cant_tapa_normatizada = "0";
 
-        this.precio_total_cuadro_ext_est_1 = 0;
-        this.precio_total_cuadro_ext_est_2 = 0;
-        this.precio_total_cuadro_ext_est_3 = 0;
-        this.precio_total_cuadro_ext_est_4 = 0;
-        this.precio_total_cuadro_ext_est_5 = 0;
-        this.precio_total_travesano_ext_mod = 0;
+        this.precio_total_cuadro_ext_est_1 = 0.0;
+        this.precio_total_cuadro_ext_est_2 = 0.0;
+        this.precio_total_cuadro_ext_est_3 = 0.0;
+        this.precio_total_cuadro_ext_est_4 = 0.0;
+        this.precio_total_cuadro_ext_est_5 = 0.0;
+        this.precio_total_travesano_ext_mod = 0.0;
 
-        this.precio_total_canastilla_13_perf = 0;
-        this.precio_total_canastilla_13_cerr = 0;
-        this.precio_total_canastilla_18_perf = 0;
-        this.precio_total_canastilla_18_cerr = 0;
-        this.precio_total_canastilla_25_perf = 0;
-        this.precio_total_canastilla_25_cerr = 0;
-        this.precio_total_canastilla_33_perf = 0;
-        this.precio_total_canastilla_33_cerr = 0;
-        this.precio_total_canastilla_41_perf = 0;
-        this.precio_total_canastilla_41_cerr = 0;
-        this.precio_total_tapa_normatizada = 0;
+        this.precio_total_canastilla_13_perf = 0.0;
+        this.precio_total_canastilla_13_cerr = 0.0;
+        this.precio_total_canastilla_18_perf = 0.0;
+        this.precio_total_canastilla_18_cerr = 0.0;
+        this.precio_total_canastilla_25_perf = 0.0;
+        this.precio_total_canastilla_25_cerr = 0.0;
+        this.precio_total_canastilla_33_perf = 0.0;
+        this.precio_total_canastilla_33_cerr = 0.0;
+        this.precio_total_canastilla_41_perf = 0.0;
+        this.precio_total_canastilla_41_cerr = 0.0;
+        this.precio_total_tapa_normatizada = 0.0;
 
-        this.precio_total_estanteria = "0";
+        this.precio_total_estanteria = 0.0;
     }
 
     // Declaración de métodos
@@ -146,7 +146,7 @@ public class estanteriaCanastillas {
     public int getCantParales(){
         return this.cant_parales;
     }
-    public float getCantCuadroU(){
+    public Double getCantCuadroU(){
         return this.cant_cuadroU;
     }
     public int getCantTravesanos(){ return this.cant_travesanos; }
@@ -166,25 +166,25 @@ public class estanteriaCanastillas {
         return this.cant_tapon_cuadrado;
     }
 
-    public String getPrecioTotalParales(){
+    public Double getPrecioTotalParales(){
         return this.precio_total_parales;
     }
-    public String getPrecioTotalCuadroU(){
+    public Double getPrecioTotalCuadroU(){
         return this.precio_total_cuadroU;
     }
-    public String getPrecioTotalTravesanos(){ return this.precio_total_travesanos; }
-    public String getPrecioTotalTornillosCortos(){
+    public Double getPrecioTotalTravesanos(){ return this.precio_total_travesanos; }
+    public Double getPrecioTotalTornillosCortos(){
         return this.precio_total_tornillos_40;
     }
-    public String getPrecioTotalTornillosLargos(){
+    public Double getPrecioTotalTornillosLargos(){
         return this.precio_total_tornillos_60;
     }
-    public String getPrecioTotalTuercaLujo(){
+    public Double getPrecioTotalTuercaLujo(){
         return this.precio_total_tuerca_lujo;
     }
-    public String getPrecioTotalBotaCuadrada(){ return this.precio_total_bota_cuadrada; }
-    public String getPrecioTotalTaponCuadrado(){ return this.precio_total_tapon_cuadrado; }
-    public String getPrecioTotalEstanteria(){
+    public Double getPrecioTotalBotaCuadrada(){ return this.precio_total_bota_cuadrada; }
+    public Double getPrecioTotalTaponCuadrado(){ return this.precio_total_tapon_cuadrado; }
+    public Double getPrecioTotalEstanteria(){
         return this.precio_total_estanteria;
     }
 
@@ -306,7 +306,7 @@ public class estanteriaCanastillas {
         this.cant_parales =
                 (Integer.valueOf(this.cuerpos) + 1) * Integer.valueOf(this.modulos) * 2;
         this.cant_cuadroU =
-                Float.valueOf(this.cuadroU) *  Float.valueOf(this.cuerpos) * Float.valueOf(this.modulos);
+                Double.valueOf(this.cuadroU) *  Float.valueOf(this.cuerpos) * Float.valueOf(this.modulos);
         this.cant_travesanos =
                 (Integer.valueOf(this.posiciones) - Integer.valueOf(this.cuadroU)) * Integer.valueOf(this.cuerpos) * Integer.valueOf(this.modulos) * 2;
         this.cant_tornillos_40 =
@@ -338,95 +338,95 @@ public class estanteriaCanastillas {
 
         if(acero_inoxidable == false) {
             if (this.altura == "0.90") {
-                this.precio_total_parales = Integer.toString(this.cant_parales * Integer.valueOf(Producto.paral_090.getPrecio()));
+                this.precio_total_parales = this.cant_parales * Producto.paral_090.getPrecio();
             } else if (this.altura == "1.46") {
-                this.precio_total_parales = Integer.toString(this.cant_parales * Integer.valueOf(Producto.paral_146.getPrecio()));
+                this.precio_total_parales = this.cant_parales * Producto.paral_146.getPrecio();
             } else if (this.altura == "1.94") {
-                this.precio_total_parales = Integer.toString(this.cant_parales * Integer.valueOf(Producto.paral_194.getPrecio()));
+                this.precio_total_parales = this.cant_parales * Producto.paral_194.getPrecio();
             } else if (this.altura == "2.40") {
-                this.precio_total_parales = Integer.toString(this.cant_parales * Integer.valueOf(Producto.paral_240.getPrecio()));
+                this.precio_total_parales = this.cant_parales * Producto.paral_240.getPrecio();
             }
         }
         else { // acero_inoxidable == true
             if (this.altura == "0.90") {
-                this.precio_total_parales = Integer.toString(this.cant_parales * Integer.valueOf(Producto.paral_090_inox.getPrecio()));
+                this.precio_total_parales = this.cant_parales * Producto.paral_090_inox.getPrecio();
             } else if (this.altura == "1.46") {
-                this.precio_total_parales = Integer.toString(this.cant_parales * Integer.valueOf(Producto.paral_146_inox.getPrecio()));
+                this.precio_total_parales = this.cant_parales * Producto.paral_146_inox.getPrecio();
             } else if (this.altura == "1.94") {
-                this.precio_total_parales = Integer.toString(this.cant_parales * Integer.valueOf(Producto.paral_194_inox.getPrecio()));
+                this.precio_total_parales = this.cant_parales * Producto.paral_194_inox.getPrecio();
             } else if (this.altura == "2.40") {
-                this.precio_total_parales = Integer.toString(this.cant_parales * Integer.valueOf(Producto.paral_240_inox.getPrecio()));
+                this.precio_total_parales = this.cant_parales * Producto.paral_240_inox.getPrecio();
             }
         }
 
         if(costado == false){
             if(acero_inoxidable == false) {
-                this.precio_total_cuadroU = Integer.toString(Math.round(this.cant_cuadroU * Float.valueOf(Producto.cuadro_u.getPrecio())));
+                this.precio_total_cuadroU = this.cant_cuadroU * Producto.cuadro_u.getPrecio();
             } else { // acero_inoxidable == true
-                this.precio_total_cuadroU = Integer.toString(Math.round(this.cant_cuadroU * Float.valueOf(Producto.cuadro_u_inox.getPrecio())));
+                this.precio_total_cuadroU = this.cant_cuadroU * Producto.cuadro_u_inox.getPrecio();
             }
         }
         else{ // costado == true
-            this.precio_total_cuadroU = Integer.toString(Math.round(this.cant_cuadroU * Float.valueOf(Producto.cuadro_u_costado.getPrecio())));
+            this.precio_total_cuadroU = this.cant_cuadroU * Producto.cuadro_u_costado.getPrecio();
         }
 
         if(costado == false){
             if(acero_inoxidable == false) {
-                this.precio_total_travesanos = Integer.toString(this.cant_travesanos * Integer.valueOf(Producto.travesano.getPrecio()));
+                this.precio_total_travesanos = this.cant_travesanos * Producto.travesano.getPrecio();
             } else { // acero_inoxidable == true
-                this.precio_total_travesanos = Integer.toString(this.cant_travesanos * Integer.valueOf(Producto.travesano_inox.getPrecio()));
+                this.precio_total_travesanos = this.cant_travesanos * Producto.travesano_inox.getPrecio();
             }
         }
         else{ // costado == true
-            this.precio_total_travesanos = Integer.toString(this.cant_travesanos * Integer.valueOf(Producto.travesano_costado.getPrecio()));
+            this.precio_total_travesanos = this.cant_travesanos * Producto.travesano_costado.getPrecio();
         }
 
         if(acero_inoxidable == false) {
-            this.precio_total_tornillos_40 = Integer.toString(this.cant_tornillos_40 * Integer.valueOf(Producto.tornillos_40.getPrecio()));
+            this.precio_total_tornillos_40 = this.cant_tornillos_40 * Producto.tornillos_40.getPrecio();
         } else{ // acero_inoxidable == true
-            this.precio_total_tornillos_40 = Integer.toString(this.cant_tornillos_40 * Integer.valueOf(Producto.tornillos_40_inox.getPrecio()));
+            this.precio_total_tornillos_40 = this.cant_tornillos_40 * Producto.tornillos_40_inox.getPrecio();
         }
 
         if(acero_inoxidable == false) {
-            this.precio_total_tornillos_60 = Integer.toString(this.cant_tornillos_60 * Integer.valueOf(Producto.tornillos_60.getPrecio()));
+            this.precio_total_tornillos_60 = this.cant_tornillos_60 * Producto.tornillos_60.getPrecio();
         } else{ // acero_inoxidable == true
-            this.precio_total_tornillos_60 = Integer.toString(this.cant_tornillos_60 * Integer.valueOf(Producto.tornillos_60_inox.getPrecio()));
+            this.precio_total_tornillos_60 = this.cant_tornillos_60 * Producto.tornillos_60_inox.getPrecio();
         }
 
         if(acero_inoxidable == false) {
-            this.precio_total_tuerca_lujo = Integer.toString(this.cant_tuerca_lujo * Integer.valueOf(Producto.tuerca_lujo.getPrecio()));
+            this.precio_total_tuerca_lujo = this.cant_tuerca_lujo * Producto.tuerca_lujo.getPrecio();
         } else { // acero_inoxidable == true
-            this.precio_total_tuerca_lujo = Integer.toString(this.cant_tuerca_lujo * Integer.valueOf(Producto.tuerca_inox.getPrecio()));
+            this.precio_total_tuerca_lujo = this.cant_tuerca_lujo * Producto.tuerca_inox.getPrecio();
         }
 
-        this.precio_total_bota_cuadrada = Integer.toString(this.cant_bota_cuadrada * Integer.valueOf(Producto.bota_cuadrada.getPrecio()));
+        this.precio_total_bota_cuadrada = this.cant_bota_cuadrada * Producto.bota_cuadrada.getPrecio();
 
-        this.precio_total_tapon_cuadrado = Integer.toString(this.cant_tapon_cuadrado * Integer.valueOf(Producto.tapon_cuadrado.getPrecio()));
+        this.precio_total_tapon_cuadrado = this.cant_tapon_cuadrado * Producto.tapon_cuadrado.getPrecio();
 
-        this.precio_total_cuadro_ext_est_1 = Integer.valueOf(this.cant_cuadro_ext_est_1) * Integer.valueOf(Producto.cuadro_ext_est_m_1.getPrecio());
-        this.precio_total_cuadro_ext_est_2 = Integer.valueOf(this.cant_cuadro_ext_est_2) * Integer.valueOf(Producto.cuadro_ext_est_m_2.getPrecio());
-        this.precio_total_cuadro_ext_est_3 = Integer.valueOf(this.cant_cuadro_ext_est_3) * Integer.valueOf(Producto.cuadro_ext_est_m_3.getPrecio());
-        this.precio_total_cuadro_ext_est_4 = Integer.valueOf(this.cant_cuadro_ext_est_4) * Integer.valueOf(Producto.cuadro_ext_est_m_4.getPrecio());
-        this.precio_total_cuadro_ext_est_5 = Integer.valueOf(this.cant_cuadro_ext_est_5) * Integer.valueOf(Producto.cuadro_ext_est_m_5.getPrecio());
-        this.precio_total_travesano_ext_mod = Integer.valueOf(this.cant_travesano_ext_mod) * Integer.valueOf(Producto.travesano_extension_modular.getPrecio());
+        this.precio_total_cuadro_ext_est_1 = Integer.valueOf(this.cant_cuadro_ext_est_1) * Producto.cuadro_ext_est_m_1.getPrecio();
+        this.precio_total_cuadro_ext_est_2 = Integer.valueOf(this.cant_cuadro_ext_est_2) * Producto.cuadro_ext_est_m_2.getPrecio();
+        this.precio_total_cuadro_ext_est_3 = Integer.valueOf(this.cant_cuadro_ext_est_3) * Producto.cuadro_ext_est_m_3.getPrecio();
+        this.precio_total_cuadro_ext_est_4 = Integer.valueOf(this.cant_cuadro_ext_est_4) * Producto.cuadro_ext_est_m_4.getPrecio();
+        this.precio_total_cuadro_ext_est_5 = Integer.valueOf(this.cant_cuadro_ext_est_5) * Producto.cuadro_ext_est_m_5.getPrecio();
+        this.precio_total_travesano_ext_mod = Integer.valueOf(this.cant_travesano_ext_mod) * Producto.travesano_extension_modular.getPrecio();
 
-        this.precio_total_canastilla_13_perf = Integer.valueOf(this.cant_canastilla_13_perf) * Integer.valueOf(Producto.canastilla_13_cm_perforada.getPrecio());
-        this.precio_total_canastilla_13_cerr = Integer.valueOf(this.cant_canastilla_13_cerr) * Integer.valueOf(Producto.canastilla_13_cm_cerrada.getPrecio());
-        this.precio_total_canastilla_18_perf = Integer.valueOf(this.cant_canastilla_18_perf) * Integer.valueOf(Producto.canastilla_18_cm_perforada.getPrecio());
-        this.precio_total_canastilla_18_cerr = Integer.valueOf(this.cant_canastilla_18_cerr) * Integer.valueOf(Producto.canastilla_18_cm_cerrada.getPrecio());
-        this.precio_total_canastilla_25_perf = Integer.valueOf(this.cant_canastilla_25_perf) * Integer.valueOf(Producto.canastilla_25_cm_perforada.getPrecio());
-        this.precio_total_canastilla_25_cerr = Integer.valueOf(this.cant_canastilla_25_cerr) * Integer.valueOf(Producto.canastilla_25_cm_cerrada.getPrecio());
-        this.precio_total_canastilla_33_perf = Integer.valueOf(this.cant_canastilla_33_perf) * Integer.valueOf(Producto.canastilla_33_cm_perforada.getPrecio());
-        this.precio_total_canastilla_33_cerr = Integer.valueOf(this.cant_canastilla_33_cerr) * Integer.valueOf(Producto.canastilla_33_cm_cerrada.getPrecio());
-        this.precio_total_canastilla_41_perf = Integer.valueOf(this.cant_canastilla_41_perf) * Integer.valueOf(Producto.canastilla_41_cm_perforada.getPrecio());
-        this.precio_total_canastilla_41_cerr = Integer.valueOf(this.cant_canastilla_41_cerr) * Integer.valueOf(Producto.canastilla_41_cm_cerrada.getPrecio());
-        this.precio_total_tapa_normatizada = Integer.valueOf(this.cant_tapa_normatizada) * Integer.valueOf(Producto.tapa_normatizada.getPrecio());
+        this.precio_total_canastilla_13_perf = Integer.valueOf(this.cant_canastilla_13_perf) * Producto.canastilla_13_cm_perforada.getPrecio();
+        this.precio_total_canastilla_13_cerr = Integer.valueOf(this.cant_canastilla_13_cerr) * Producto.canastilla_13_cm_cerrada.getPrecio();
+        this.precio_total_canastilla_18_perf = Integer.valueOf(this.cant_canastilla_18_perf) * Producto.canastilla_18_cm_perforada.getPrecio();
+        this.precio_total_canastilla_18_cerr = Integer.valueOf(this.cant_canastilla_18_cerr) * Producto.canastilla_18_cm_cerrada.getPrecio();
+        this.precio_total_canastilla_25_perf = Integer.valueOf(this.cant_canastilla_25_perf) * Producto.canastilla_25_cm_perforada.getPrecio();
+        this.precio_total_canastilla_25_cerr = Integer.valueOf(this.cant_canastilla_25_cerr) * Producto.canastilla_25_cm_cerrada.getPrecio();
+        this.precio_total_canastilla_33_perf = Integer.valueOf(this.cant_canastilla_33_perf) * Producto.canastilla_33_cm_perforada.getPrecio();
+        this.precio_total_canastilla_33_cerr = Integer.valueOf(this.cant_canastilla_33_cerr) * Producto.canastilla_33_cm_cerrada.getPrecio();
+        this.precio_total_canastilla_41_perf = Integer.valueOf(this.cant_canastilla_41_perf) * Producto.canastilla_41_cm_perforada.getPrecio();
+        this.precio_total_canastilla_41_cerr = Integer.valueOf(this.cant_canastilla_41_cerr) * Producto.canastilla_41_cm_cerrada.getPrecio();
+        this.precio_total_tapa_normatizada = Integer.valueOf(this.cant_tapa_normatizada) * Producto.tapa_normatizada.getPrecio();
 
-        this.precio_total_estanteria = Integer.toString(
-                Integer.valueOf(this.precio_total_parales) + Integer.valueOf(this.precio_total_cuadroU) +
-                Integer.valueOf(this.precio_total_travesanos) + Integer.valueOf(this.precio_total_tornillos_40) +
-                Integer.valueOf(this.precio_total_tornillos_60) + Integer.valueOf(this.precio_total_tuerca_lujo) +
-                Integer.valueOf(this.precio_total_tapon_cuadrado) + Integer.valueOf(this.precio_total_bota_cuadrada) +
+        this.precio_total_estanteria =
+                this.precio_total_parales + this.precio_total_cuadroU +
+                this.precio_total_travesanos + this.precio_total_tornillos_40 +
+                this.precio_total_tornillos_60 + this.precio_total_tuerca_lujo +
+                this.precio_total_tapon_cuadrado + this.precio_total_bota_cuadrada +
 
                 this.precio_total_cuadro_ext_est_1 + this.precio_total_cuadro_ext_est_2 +
                 this.precio_total_cuadro_ext_est_3 + this.precio_total_cuadro_ext_est_4 +
@@ -437,10 +437,10 @@ public class estanteriaCanastillas {
                 this.precio_total_canastilla_25_perf + this.precio_total_canastilla_25_cerr +
                 this.precio_total_canastilla_33_perf + this.precio_total_canastilla_33_cerr +
                 this.precio_total_canastilla_41_perf + this.precio_total_canastilla_41_cerr +
-                this.precio_total_tapa_normatizada
-        );
+                this.precio_total_tapa_normatizada;
     }
 
+    // TODO: take a look in this function to display the result in "money" format
     public void formatoPrecio(String precio){
         String temp_precio = "";
         for(int i = 1; i < precio.length() + 1; i++) {
@@ -452,7 +452,8 @@ public class estanteriaCanastillas {
         this.precio_total_estanteria = reverse(temp_precio);
     }
 
-    public static String reverse(String input){
+    // TODO: take a look in this function to display the result in "money" format
+    public static Double reverse(String input){
         char[] in = input.toCharArray();
         int begin = 0;
         int end= in.length - 1;
@@ -464,7 +465,7 @@ public class estanteriaCanastillas {
             end--;
             begin++;
         }
-        return new String(in);
+        return Double.valueOf(new String(in));
     }
 
 }

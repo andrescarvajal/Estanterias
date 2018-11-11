@@ -15,7 +15,7 @@ public class estanteriaCarga {
             cant_tornillos_80, cant_tuerca_lujo, cant_tapon_rectangular;
     private float cant_cuadro;
 
-    private String precio_total_parales, precio_total_cuadro, precio_total_travesanos,
+    private Double precio_total_parales, precio_total_cuadro, precio_total_travesanos,
             precio_total_tornillos_60, precio_total_tornillos_80, precio_total_tuerca_lujo,
             precio_total_tapon_rectangular, precio_total_estanteria;
 
@@ -39,15 +39,15 @@ public class estanteriaCarga {
         this.cant_tuerca_lujo = 0;
         this.cant_tapon_rectangular = 0;
 
-        this.precio_total_parales = "0";
-        this.precio_total_cuadro = "0";
-        this.precio_total_travesanos = "0";
-        this.precio_total_tornillos_60 = "0";
-        this.precio_total_tornillos_80 = "0";
-        this.precio_total_tuerca_lujo = "0";
-        this.precio_total_tapon_rectangular = "0";
+        this.precio_total_parales = 0.0;
+        this.precio_total_cuadro = 0.0;
+        this.precio_total_travesanos = 0.0;
+        this.precio_total_tornillos_60 = 0.0;
+        this.precio_total_tornillos_80 = 0.0;
+        this.precio_total_tuerca_lujo = 0.0;
+        this.precio_total_tapon_rectangular = 0.0;
 
-        this.precio_total_estanteria = "0";
+        this.precio_total_estanteria = 0.0;
     }
 
     //declaración de métodos
@@ -87,24 +87,24 @@ public class estanteriaCarga {
         return this.cant_tapon_rectangular;
     }
 
-    public String getPrecioTotalParales(){
+    public Double getPrecioTotalParales(){
         return this.precio_total_parales;
     }
-    public String getPrecioTotalCuadro(){
+    public Double getPrecioTotalCuadro(){
         return this.precio_total_cuadro;
     }
-    public String getPrecioTotalTravesanos(){ return this.precio_total_travesanos; }
-    public String getPrecioTotalTornillos60(){
+    public Double getPrecioTotalTravesanos(){ return this.precio_total_travesanos; }
+    public Double getPrecioTotalTornillos60(){
         return this.precio_total_tornillos_60;
     }
-    public String getPrecioTotalTornillos80(){
+    public Double getPrecioTotalTornillos80(){
         return this.precio_total_tornillos_80;
     }
-    public String getPrecioTotalTuercaLujo(){
+    public Double getPrecioTotalTuercaLujo(){
         return this.precio_total_tuerca_lujo;
     }
-    public String getPrecioTotalTaponRectangular(){ return this.precio_total_tapon_rectangular; }
-    public String getPrecioTotalEstanteria(){
+    public Double getPrecioTotalTaponRectangular(){ return this.precio_total_tapon_rectangular; }
+    public Double getPrecioTotalEstanteria(){
         return this.precio_total_estanteria;
     }
 
@@ -182,70 +182,68 @@ public class estanteriaCarga {
 
         if (acero_inoxidable == false) {
             if (this.altura == "1.94") {
-                this.precio_total_parales = Integer.toString(this.cant_parales * Integer.valueOf(Producto.paral_194_carga.getPrecio()));
+                this.precio_total_parales = this.cant_parales * Producto.paral_194_carga.getPrecio();
             } else if (this.altura == "2.40") {
-                this.precio_total_parales = Integer.toString(this.cant_parales * Integer.valueOf(Producto.paral_240_carga.getPrecio()));
+                this.precio_total_parales = this.cant_parales * Producto.paral_240_carga.getPrecio();
             }
         } else { // acero_inoxidable == true
             if (this.altura == "1.94") {
-                this.precio_total_parales = Integer.toString(this.cant_parales * Integer.valueOf(Producto.paral_194_carga_inox.getPrecio()));
+                this.precio_total_parales = this.cant_parales * Producto.paral_194_carga_inox.getPrecio();
             } else if (this.altura == "2.40") {
-                this.precio_total_parales = Integer.toString(this.cant_parales * Integer.valueOf(Producto.paral_240_carga_inox.getPrecio()));
+                this.precio_total_parales = this.cant_parales * Producto.paral_240_carga_inox.getPrecio();
             }
         }
 
         if (acero_inoxidable == false) {
             if (this.cuadro == "40x90") {
-                this.precio_total_cuadro = Integer.toString(Math.round(this.cant_cuadro * Integer.valueOf(Producto.cuadro_carga_40_90.getPrecio())));
+                this.precio_total_cuadro = this.cant_cuadro * Producto.cuadro_carga_40_90.getPrecio();
             }
             if (this.cuadro == "52x90") {
-                this.precio_total_cuadro = Integer.toString(Math.round(this.cant_cuadro * Integer.valueOf(Producto.cuadro_carga_52_90.getPrecio())));
+                this.precio_total_cuadro = this.cant_cuadro * Producto.cuadro_carga_52_90.getPrecio();
             }
             if (this.cuadro == "60x90") {
-                this.precio_total_cuadro = Integer.toString(Math.round(this.cant_cuadro * Integer.valueOf(Producto.cuadro_carga_60_90.getPrecio())));
+                this.precio_total_cuadro = this.cant_cuadro * Producto.cuadro_carga_60_90.getPrecio();
             }
             if (this.cuadro == "70x90") {
-                this.precio_total_cuadro = Integer.toString(Math.round(this.cant_cuadro * Integer.valueOf(Producto.cuadro_carga_70_90.getPrecio())));
+                this.precio_total_cuadro = this.cant_cuadro * Producto.cuadro_carga_70_90.getPrecio();
             }
             if (this.cuadro == "60x120") {
-                this.precio_total_cuadro = Integer.toString(Math.round(this.cant_cuadro * Integer.valueOf(Producto.cuadro_carga_60_120.getPrecio())));
+                this.precio_total_cuadro = this.cant_cuadro * Producto.cuadro_carga_60_120.getPrecio();
             }
 
         } else { // acero_inoxidable == true
             if (this.cuadro == "60x90I") {
-                this.precio_total_cuadro = Integer.toString(Math.round(this.cant_cuadro * Integer.valueOf(Producto.cuadro_carga_60_90_I.getPrecio())));
+                this.precio_total_cuadro = this.cant_cuadro * Producto.cuadro_carga_60_90_I.getPrecio();
             }
         }
 
 
         if (acero_inoxidable == false) {
-            this.precio_total_tornillos_60 = Integer.toString(this.cant_tornillos_60 * Integer.valueOf(Producto.tornillos_60.getPrecio()));
+            this.precio_total_tornillos_60 = this.cant_tornillos_60 * Producto.tornillos_60.getPrecio();
         } else { // acero_inoxidable == true
-            this.precio_total_tornillos_60 = Integer.toString(this.cant_tornillos_60 * Integer.valueOf(Producto.tornillos_60_inox.getPrecio()));
+            this.precio_total_tornillos_60 = this.cant_tornillos_60 * Producto.tornillos_60_inox.getPrecio();
         }
 
         if (acero_inoxidable == false) {
-            this.precio_total_tornillos_80 = Integer.toString(this.cant_tornillos_80 * Integer.valueOf(Producto.tornillos_80.getPrecio()));
+            this.precio_total_tornillos_80 = this.cant_tornillos_80 * Producto.tornillos_80.getPrecio();
         } else { // acero_inoxidable == true
-            this.precio_total_tornillos_80 = Integer.toString(this.cant_tornillos_80 * Integer.valueOf(Producto.tornillos_80_inox.getPrecio()));
+            this.precio_total_tornillos_80 = this.cant_tornillos_80 * Producto.tornillos_80_inox.getPrecio();
         }
 
         if (acero_inoxidable == false) {
-            this.precio_total_tuerca_lujo = Integer.toString(this.cant_tuerca_lujo * Integer.valueOf(Producto.tuerca_lujo.getPrecio()));
+            this.precio_total_tuerca_lujo = this.cant_tuerca_lujo * Producto.tuerca_lujo.getPrecio();
         } else { // acero_inoxidable == true
-            this.precio_total_tuerca_lujo = Integer.toString(this.cant_tuerca_lujo * Integer.valueOf(Producto.tuerca_inox.getPrecio()));
+            this.precio_total_tuerca_lujo = this.cant_tuerca_lujo * Producto.tuerca_inox.getPrecio();
         }
 
-        this.precio_total_tapon_rectangular = Integer.toString(this.cant_tapon_rectangular * Integer.valueOf(Producto.tapon_rectangular.getPrecio()));
+        this.precio_total_tapon_rectangular = this.cant_tapon_rectangular * Producto.tapon_rectangular.getPrecio();
 
-        this.precio_total_estanteria = Integer.toString(
-                Integer.valueOf(this.precio_total_parales) + Integer.valueOf(this.precio_total_cuadro) +
-                        Integer.valueOf(this.precio_total_tornillos_60) +
-                        Integer.valueOf(this.precio_total_tornillos_80) + Integer.valueOf(this.precio_total_tuerca_lujo) +
-                        Integer.valueOf(this.precio_total_tapon_rectangular)
-        );
+        this.precio_total_estanteria = this.precio_total_parales + this.precio_total_cuadro +
+                        this.precio_total_tornillos_60 + this.precio_total_tornillos_80 +
+                        this.precio_total_tuerca_lujo + this.precio_total_tapon_rectangular;
     }
 
+    // TODO: take a look in this function to display the result in "money" format
     public void formatoPrecio(String precio){
         String temp_precio = "";
         for(int i = 1; i < precio.length() + 1; i++) {
@@ -257,7 +255,8 @@ public class estanteriaCarga {
         this.precio_total_estanteria = reverse(temp_precio);
     }
 
-    public static String reverse(String input){
+    // TODO: take a look in this function to display the result in "money" format
+    public static Double reverse(String input){
         char[] in = input.toCharArray();
         int begin = 0;
         int end= in.length - 1;
@@ -269,7 +268,7 @@ public class estanteriaCarga {
             end--;
             begin++;
         }
-        return new String(in);
+        return Double.valueOf(new String(in));
     }
 
 }
