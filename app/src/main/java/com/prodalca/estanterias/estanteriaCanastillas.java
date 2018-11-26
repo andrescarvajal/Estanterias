@@ -440,20 +440,34 @@ public class estanteriaCanastillas {
                 this.precio_total_tapa_normatizada;
     }
 
-    // TODO: take a look in this function to display the result in "money" format
-    public void formatoPrecio(String precio){
+    // It gives format to the price to be displayed
+    public String formatoPrecio(Double precio_num){
+        // The "part of interest" of the number is stored (with two decimal positions)
+        String precio_string_complete = String.format("%.2f", precio_num);
+        String decimal_part = "";
+        if (precio_string_complete != null && precio_string_complete.length() >= 2) {
+            decimal_part = precio_string_complete.substring(precio_string_complete.length() - 2);
+        }
+
+        // Only the integer part is stored
+        String precio_string_int = String.format("%.0f", precio_num);
+
+        // Initially, temp_precio is empty
         String temp_precio = "";
-        for(int i = 1; i < precio.length() + 1; i++) {
-            temp_precio = temp_precio.concat(String.valueOf(precio.charAt((precio.length() - i))));
-            if(i % 3 == 0 && i != precio.length()){
+        for(int i = 1; i < precio_string_int.length() + 1; i++) {
+            // It goes through the whole input string and adds a point every third number
+            temp_precio = temp_precio.concat(String.valueOf(precio_string_int.charAt((precio_string_int.length() - i))));
+            if(i % 3 == 0 && i != precio_string_int.length()){
                 temp_precio = temp_precio.concat(".");
             }
         }
-        this.precio_total_estanteria = reverse(temp_precio);
+        // The result string is inverted and must be reversed to be displayed
+        return reverse(temp_precio) + "," + decimal_part;
+        //return temp_precio;
     }
 
     // TODO: take a look in this function to display the result in "money" format
-    public static Double reverse(String input){
+    public static String reverse(String input){
         char[] in = input.toCharArray();
         int begin = 0;
         int end= in.length - 1;
@@ -465,7 +479,7 @@ public class estanteriaCanastillas {
             end--;
             begin++;
         }
-        return Double.valueOf(new String(in));
+        return new String(in);
     }
 
 }

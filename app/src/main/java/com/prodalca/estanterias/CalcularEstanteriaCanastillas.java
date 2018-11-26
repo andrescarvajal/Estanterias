@@ -298,11 +298,9 @@ public class CalcularEstanteriaCanastillas extends AppCompatActivity implements 
                 // It calculates the price of the shelf
                 estanteria.calcularPrecio(checkBoxAceroInoxidable.isChecked(),checkBoxCostado.isChecked());
 
-                // It gives format to the price to be displayed
-                // TODO: take a look in this function to display the result in "money" format
-                //estanteria.formatoPrecio(String.valueOf(estanteria.getPrecioTotalEstanteria()));
-                // It displays the calculated price of the shelf
-                textoResultado.setText(String.valueOf(estanteria.getPrecioTotalEstanteria()));
+                // It gives format to the price to be displayed and
+                // it displays the calculated price of the shelf
+                textoResultado.setText(estanteria.formatoPrecio(estanteria.getPrecioTotalEstanteria()));
 
                 break;
 

@@ -8,6 +8,15 @@ public class Producto {
 
     //declaración de atributos
     private String nombre, ref, unidad;
+
+    /* TODO : There is a problem with the exponential representation of double variables. The
+    / applicacation of these variables in financial fields can lead to problems in the calculations.
+    / Take a look atthe following link:
+    / https://javarevisited.blogspot.com/2012/02/java-mistake-1-using-float-and-double.html
+    /
+    / Note that the prices are limited to some value and after that they lost precision.
+    / Something beyond this length in a value 99.999.999.955.566,05
+    */
     private Double precio;
 
     //declaración de constructor
