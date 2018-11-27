@@ -235,11 +235,9 @@ public class CalcularEstanteriaCarga extends AppCompatActivity implements OnClic
                 estanteria.calcularCantidades(checkBoxAceroInoxidable.isChecked());
                 estanteria.calcularPrecio(checkBoxAceroInoxidable.isChecked());
 
-                // It gives format to the price to be displayed
-                // TODO: take a look in this function to display the result in "money" format
-                //estanteria.formatoPrecio(estanteria.getPrecioTotalEstanteria());
-                // It displays the calculated price of the shelf
-                textoResultado.setText(String.valueOf(estanteria.getPrecioTotalEstanteria()));
+                // It gives format to the price to be displayed and
+                // it displays the calculated price of the shelf
+                textoResultado.setText(estanteria.formatoPrecio(estanteria.getPrecioTotalEstanteria()));
 
                 break;
 

@@ -463,10 +463,9 @@ public class estanteriaCanastillas {
         }
         // The result string is inverted and must be reversed to be displayed
         return reverse(temp_precio) + "," + decimal_part;
-        //return temp_precio;
     }
 
-    // TODO: take a look in this function to display the result in "money" format
+    // This function reverses the elements of the string
     public static String reverse(String input){
         char[] in = input.toCharArray();
         int begin = 0;
