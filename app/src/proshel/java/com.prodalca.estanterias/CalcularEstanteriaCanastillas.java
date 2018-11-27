@@ -36,28 +36,6 @@ public class CalcularEstanteriaCanastillas extends AppCompatActivity implements 
     Button masModulos;
     TextView textoModulosSelec;
 
-    EditText cuadroExtEst1Selec;
-    EditText cuadroExtEst2Selec;
-    EditText cuadroExtEst3Selec;
-    EditText cuadroExtEst4Selec;
-    EditText cuadroExtEst5Selec;
-    EditText travesanoEtxModularSelec;
-
-    EditText canastillas13PerforadaSelec;
-    EditText canastillas13CerradaSelec;
-    EditText canastillas18PerforadaSelec;
-    EditText canastillas18CerradaSelec;
-    EditText canastillas25PerforadaSelec;
-    EditText canastillas25CerradaSelec;
-    EditText canastillas33PerforadaSelec;
-    EditText canastillas33CerradaSelec;
-    EditText canastillas41PerforadaSelec;
-    EditText canastillas41CerradaSelec;
-    EditText tapaNormatizadaSelec;
-
-    CheckBox checkBoxAceroInoxidable;
-    CheckBox checkBoxCostado;
-
     Button calcularEstCanastillas;
     TextView textoResultado;
 
@@ -104,28 +82,6 @@ public class CalcularEstanteriaCanastillas extends AppCompatActivity implements 
         masModulos = (Button) findViewById(R.id.masModulos);
         textoModulosSelec = (TextView) findViewById(R.id.textoModulosSelec);
 
-        cuadroExtEst1Selec = (EditText) findViewById(R.id.cuadroExtEst1Selec);
-        cuadroExtEst2Selec = (EditText) findViewById(R.id.cuadroExtEst2Selec);
-        cuadroExtEst3Selec = (EditText) findViewById(R.id.cuadroExtEst3Selec);
-        cuadroExtEst4Selec = (EditText) findViewById(R.id.cuadroExtEst4Selec);
-        cuadroExtEst5Selec = (EditText) findViewById(R.id.cuadroExtEst5Selec);
-        travesanoEtxModularSelec = (EditText) findViewById(R.id.travesanoEtxModularSelec);
-
-        canastillas13PerforadaSelec = (EditText) findViewById(R.id.canastillas13PerforadaSelec);
-        canastillas13CerradaSelec = (EditText) findViewById(R.id.canastillas13CerradaSelec);
-        canastillas18PerforadaSelec = (EditText) findViewById(R.id.canastillas18PerforadaSelec);
-        canastillas18CerradaSelec = (EditText) findViewById(R.id.canastillas18CerradaSelec);
-        canastillas25PerforadaSelec = (EditText) findViewById(R.id.canastillas25PerforadaSelec);
-        canastillas25CerradaSelec = (EditText) findViewById(R.id.canastillas25CerradaSelec);
-        canastillas33PerforadaSelec = (EditText) findViewById(R.id.canastillas33PerforadaSelec);
-        canastillas33CerradaSelec = (EditText) findViewById(R.id.canastillas33CerradaSelec);
-        canastillas41PerforadaSelec = (EditText) findViewById(R.id.canastillas41PerforadaSelec);
-        canastillas41CerradaSelec = (EditText) findViewById(R.id.canastillas41CerradaSelec);
-        tapaNormatizadaSelec = (EditText) findViewById(R.id.tapaNormalizadaSelec);
-
-        checkBoxAceroInoxidable = (CheckBox) findViewById(R.id.checkBoxAceroInoxidable);
-        checkBoxCostado = (CheckBox) findViewById(R.id.checkBoxCostado);
-
         calcularEstCanastillas = (Button) findViewById(R.id.calcularEstCanastillas);
         textoResultado = (TextView) findViewById(R.id.textoResultado);
 
@@ -145,31 +101,10 @@ public class CalcularEstanteriaCanastillas extends AppCompatActivity implements 
         menosModulos.setOnClickListener(this);
         masModulos.setOnClickListener(this);
 
-        checkBoxAceroInoxidable.setOnClickListener(this);
-        checkBoxCostado.setOnClickListener(this);
-
         /* Se hace este "setOnFocusChangeListener" con el fin de que con solo seleccionar una de
          * opciones de los campos de textos, el resultado total de la estanteria se borra.
          * Ver la funcion "onFocusChange". De este modo se obliga al usuario a actualizar el
          * resultado presionando el boton CALCULAR  */
-
-        cuadroExtEst1Selec.setOnFocusChangeListener(this);
-        cuadroExtEst2Selec.setOnFocusChangeListener(this);
-        cuadroExtEst3Selec.setOnFocusChangeListener(this);
-        cuadroExtEst4Selec.setOnFocusChangeListener(this);
-        cuadroExtEst5Selec.setOnFocusChangeListener(this);
-        travesanoEtxModularSelec.setOnFocusChangeListener(this);
-
-        canastillas13PerforadaSelec.setOnFocusChangeListener(this);
-        canastillas13CerradaSelec.setOnFocusChangeListener(this);
-        canastillas18PerforadaSelec.setOnFocusChangeListener(this);
-        canastillas18CerradaSelec.setOnFocusChangeListener(this);
-        canastillas25PerforadaSelec.setOnFocusChangeListener(this);
-        canastillas25CerradaSelec.setOnFocusChangeListener(this);
-        canastillas33PerforadaSelec.setOnFocusChangeListener(this);
-        canastillas33CerradaSelec.setOnFocusChangeListener(this);
-        canastillas41PerforadaSelec.setOnFocusChangeListener(this);
-        canastillas41CerradaSelec.setOnFocusChangeListener(this);
 
         calcularEstCanastillas.setOnClickListener(this);
         
@@ -259,44 +194,14 @@ public class CalcularEstanteriaCanastillas extends AppCompatActivity implements 
                 }
                 break;
 
-            case R.id.checkBoxAceroInoxidable:
-                    checkBoxCostado.setChecked(false);
-                break;
-
-            case R.id.checkBoxCostado:
-                    checkBoxAceroInoxidable.setChecked(false);
-                break;
-
             // The price of the shelf is calculated here
             case R.id.calcularEstCanastillas:
 
-                // This part goes through all fields related to additional elements of the shelf and
-                // it refreshes the current amount selected by the user
-                estanteria.actCuadroExtEst1Selec(cuadroExtEst1Selec.getText().toString());
-                estanteria.actCuadroExtEst2Selec(cuadroExtEst2Selec.getText().toString());
-                estanteria.actCuadroExtEst3Selec(cuadroExtEst3Selec.getText().toString());
-                estanteria.actCuadroExtEst4Selec(cuadroExtEst4Selec.getText().toString());
-                estanteria.actCuadroExtEst5Selec(cuadroExtEst5Selec.getText().toString());
-                estanteria.actTravesanoEtxModularSelec(travesanoEtxModularSelec.getText().toString());
-
-                // This part goes through all fields related to additional elements of the shelf and
-                // it refreshes the current amount selected by the user
-                estanteria.actCanastilla13Perforada(canastillas13PerforadaSelec.getText().toString());
-                estanteria.actCanastilla13Cerrada(canastillas13CerradaSelec.getText().toString());
-                estanteria.actCanastilla18Perforada(canastillas18PerforadaSelec.getText().toString());
-                estanteria.actCanastilla18Cerrada(canastillas18CerradaSelec.getText().toString());
-                estanteria.actCanastilla25Perforada(canastillas25PerforadaSelec.getText().toString());
-                estanteria.actCanastilla25Cerrada(canastillas25CerradaSelec.getText().toString());
-                estanteria.actCanastilla33Perforada(canastillas33PerforadaSelec.getText().toString());
-                estanteria.actCanastilla33Cerrada(canastillas33CerradaSelec.getText().toString());
-                estanteria.actCanastilla41Perforada(canastillas41PerforadaSelec.getText().toString());
-                estanteria.actCanastilla41Cerrada(canastillas41CerradaSelec.getText().toString());
-                estanteria.actTapaNormatizada(tapaNormatizadaSelec.getText().toString());
-
+                //TODO: Hardcoded input for functions. Look for a better solution
                 // It calculates the amount of elements that are necessary to build the shelf
-                estanteria.calcularCantidades(checkBoxAceroInoxidable.isChecked(),checkBoxCostado.isChecked());
+                estanteria.calcularCantidades(false,false);
                 // It calculates the price of the shelf
-                estanteria.calcularPrecio(checkBoxAceroInoxidable.isChecked(),checkBoxCostado.isChecked());
+                estanteria.calcularPrecio(false,false);
 
                 // It gives format to the price to be displayed and
                 // it displays the calculated price of the shelf
