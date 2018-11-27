@@ -1,0 +1,52 @@
+This file briefly explains the project structure and the differences between the product flavors.
+All flavors share some java files that contain the classes with the logic to build a shelf and calculate
+its price for example.
+
+Shared java files:
+
+- CalcularEstanteriaCanastillas.java
+- CalcularEstanteriaCarga.java
+- estanteriaCanastillas.java
+- estanteriaCarga.java
+- MainMenu.java
+
+Other files for visual design are also shared. For example, some .xml files are used in views that
+are the same amoung the flavors.
+
+Some flavors have specific characteristics that have to be represented with an own file. Each flavor
+owns its Producto.java, where the prices of products are given.
+
+The current developed flavor are listed in the following:
+
+- formacajas
+- modulaser
+- estra
+- proshel
+
+Each of these flavors has the following own files.
+
+- formacajas
+
+    - res/layout/activity_main_menu.xml
+        - Just one logo
+
+- modulaser
+
+    - res/drawable/logo_2.png
+    - res/layout/activity_main_menu.xml
+        - 2 logos
+        - 2 buttons
+
+- estra
+
+    - res/drawable/logo_2.png
+    - res/layout/activity_main_menu.xml
+        - 2 logos
+        - 1 button (canastillas)
+
+- proshel
+
+    - res/drawable/logo_2.png
+    - res/layout/activity_main_menu.xml
+        - 2 logos
+        - 1 button (canastillas)
