@@ -53,6 +53,9 @@ public class Producto {
     public static Producto cuadro_u_costado = new Producto("Cuadro unión costado",  26790.0, "TL171", "Unidad");
     public static Producto travesano_costado = new Producto("Travesaño costado",    7195.0, "TL170", "Unidad");
 
+    // TODO: These items are producing different values in the result!! Consider to change the type of the variable
+    // Take a look atthe following link
+    // https://javarevisited.blogspot.com/2012/02/java-mistake-1-using-float-and-double.html
     public static Producto cuadro_ext_est_m_1 = new Producto("Cuadro ext. est. m. de 1", 56333.0, "TL021", "Unidad");
     public static Producto cuadro_ext_est_m_2 = new Producto("Cuadro ext. est. m. de 2", 81119.0, "TL027", "Unidad");
     public static Producto cuadro_ext_est_m_3 = new Producto("Cuadro ext. est. m. de 3", 104404.0, "TL033", "Unidad");
