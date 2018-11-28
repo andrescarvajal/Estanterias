@@ -426,7 +426,7 @@ public class estanteriaCanastillas {
                 this.precio_total_parales + this.precio_total_cuadroU +
                 this.precio_total_travesanos + this.precio_total_tornillos_40 +
                 this.precio_total_tornillos_60 + this.precio_total_tuerca_lujo +
-                this.precio_total_tapon_cuadrado +
+                this.precio_total_tapon_cuadrado + this.precio_total_bota_cuadrada +
 
                 this.precio_total_cuadro_ext_est_1 + this.precio_total_cuadro_ext_est_2 +
                 this.precio_total_cuadro_ext_est_3 + this.precio_total_cuadro_ext_est_4 +
