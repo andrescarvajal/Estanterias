@@ -52,12 +52,12 @@ public class Producto {
 
     // Estanteria canastillas (convencional)
 
-    public static Producto paral_090 = new Producto("Parales 0,90 m",   12826.0, "TL088", "Unidad");
-    public static Producto paral_146 = new Producto("Parales 1,46 m",   18063.0, "TL145", "Unidad");
-    public static Producto paral_194 = new Producto("Parales 1,94 m",   21279.0, "TL099", "Unidad");
-    public static Producto paral_240 = new Producto("Parales 2,40 m",   32459.0, "TL013", "Unidad");
-    public static Producto cuadro_u = new Producto("Cuadro unión",      22580.0, "TL100", "Unidad");
-    public static Producto travesano = new Producto("Travesaño",        7501.0, "TL146", "Unidad");
+    public static Producto paral_090 = new Producto("Parales 0,90 m",   11862.0, "TL088", "Unidad");
+    public static Producto paral_146 = new Producto("Parales 1,46 m",   16813.0, "TL145", "Unidad");
+    public static Producto paral_194 = new Producto("Parales 1,94 m",   19786.0, "TL099", "Unidad");
+    public static Producto paral_240 = new Producto("Parales 2,40 m",   30121.0, "TL013", "Unidad");
+    public static Producto cuadro_u = new Producto("Cuadro unión",      20872.0, "TL100", "Unidad");
+    public static Producto travesano = new Producto("Travesaño",        6934.0, "TL146", "Unidad");
 
     public static Producto bota_cuadrada = new Producto("Bota cuadrada de 3/4", 126.0, "MP065", "Unidad");
     public static Producto tapon_cuadrado = new Producto("Tapon de 3/4",        126.0, "MP097", "Unidad");
@@ -119,10 +119,10 @@ public class Producto {
 
     // Tonilleria (comun)
 
-    public static Producto tornillos_40 = new Producto("Tornillos Hex de 6 x 40", 265.0, "MP088", "Unidad");
-    public static Producto tornillos_60 = new Producto("Tornillos Hex de 6 x 60", 385.0, "MP279", "Unidad");
+    public static Producto tornillos_40 = new Producto("Tornillos Hex de 6 x 40", 245.0, "MP088", "Unidad");
+    public static Producto tornillos_60 = new Producto("Tornillos Hex de 6 x 60", 356.0, "MP279", "Unidad");
     public static Producto tornillos_80 = new Producto("Tornillos Hex de 6 x 80", 503.0, "MP293", "Unidad");
-    public static Producto tuerca_lujo = new Producto("Tuerca lujo ciega de 6mm", 147.0, "MP294", "Unidad");
+    public static Producto tuerca_lujo = new Producto("Tuerca lujo ciega de 6mm", 136.0, "MP294", "Unidad");
 
     // Tornilleria (inoxidable)
 

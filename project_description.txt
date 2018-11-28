@@ -51,5 +51,6 @@ Each of these flavors has the following own files.
     - res/drawable/logo_2.png
     - res/layout/activity_main_menu.xml
         - 2 logos
-        TODO: por definir con Julian Cardona
-        - 1 button (canastillas) o también carga??
+        - 1 button (canastillas)
+    - res/layout/activity_calcular_estanteria_canastillas.xml
+        - Solo permite el calculo de la estanteria convencional (no inoxidable, no costado)
