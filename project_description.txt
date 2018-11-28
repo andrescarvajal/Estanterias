@@ -30,12 +30,18 @@ Each of these flavors has the following own files.
     - res/layout/activity_main_menu.xml
         - Just one logo
 
+        - java/com.prodalca.estanterias/estanteriaCanastillas
+            - calculo "normal" (comparar con estra)
+
 - modulaser
 
     - res/drawable/logo_2.png
     - res/layout/activity_main_menu.xml
         - 2 logos
         - 2 buttons
+
+    - java/com.prodalca.estanterias/estanteriaCanastillas
+        - calculo "normal" (comparar con estra)
 
 - estra
 
@@ -46,6 +52,9 @@ Each of these flavors has the following own files.
     - res/layout/activity_calcular_estanteria_canastillas.xml
         - Solo permite el calculo de la estanteria convencional (no inoxidable, no costado)
 
+    - java/com.prodalca.estanterias/estanteriaCanastillas
+        - Calcula la estanteria de una forma "especial" para estra. Junta el precio del paral y la bota cuadrada
+
 - proshel
 
     - res/drawable/logo_2.png
@@ -54,3 +63,6 @@ Each of these flavors has the following own files.
         - 1 button (canastillas)
     - res/layout/activity_calcular_estanteria_canastillas.xml
         - Solo permite el calculo de la estanteria convencional (no inoxidable, no costado)
+
+    - java/com.prodalca.estanterias/estanteriaCanastillas
+        - calculo "normal" (comparar con estra)
