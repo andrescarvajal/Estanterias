@@ -36,6 +36,11 @@ android {
             applicationIdSuffix ".formacajas"
             versionNameSuffix "-formacajas"
         }
+        formacajas_santander {
+            dimension "empresa"
+            applicationIdSuffix ".formacajas_santander"
+            versionNameSuffix "-formacajas_santander"
+        }
         modulaser {
             dimension "empresa"
             applicationIdSuffix ".modulaser"
