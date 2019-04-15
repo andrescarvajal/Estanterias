@@ -8,14 +8,10 @@ import android.view.View.OnFocusChangeListener;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.EditText;
 import android.widget.TextView;
 
-// This class is used to calculate the price of a given shelf
-public class CalcularEstanteriaCanastillas extends AppCompatActivity implements OnClickListener, OnFocusChangeListener {
+public class CalcularEstanteriaCarga extends AppCompatActivity implements OnClickListener, OnFocusChangeListener {
 
-    // In the following, the elements associated to the user interface are declared
-    // These are used by the user to introduce the properties of the shelf
     Button menosAltura;
     Button masAltura;
     TextView textoAlturaSelec;
@@ -24,45 +20,45 @@ public class CalcularEstanteriaCanastillas extends AppCompatActivity implements 
     Button masCuerpos;
     TextView textoCuerposSelec;
 
-    Button menosPosiciones;
-    Button masPosiciones;
-    TextView textoPosicionesSelec;
+    Button menosNiveles;
+    Button masNiveles;
+    TextView textoNivelesSelec;
 
-    Button menosCuadroU;
-    Button masCuadroU;
-    TextView textoCuadroUSelec;
+    Button menosCuadro;
+    Button masCuadro;
+    TextView textoCuadroSelec;
 
     Button menosModulos;
     Button masModulos;
     TextView textoModulosSelec;
 
+    Button menosFondo;
+    Button masFondo;
+    TextView textoFondoSelec;
+
     CheckBox checkBoxAceroInoxidable;
-    CheckBox checkBoxCostado;
     CheckBox checkBoxInstalacion;
 
     Button calcularEstCanastillas;
     TextView textoResultado;
 
-    // This creates an object of the class estanteriaCanastillas
-    // The shelf starts with a configuration of 1,94 m "altura".
-    estanteriaCanastillas estanteria = new estanteriaCanastillas("1.94", "1", "4", "3", "1", false, false, false);
+    estanteriaCarga estanteria = new estanteriaCarga("1.94", "1", "2", "40x90", "1", "1", false, false);
 
-    // This counters allow one to move around the possible values of the shelf characteristics
-    int contador_altura = 2;
+    int contador_altura = 0;
     int contador_cuerpos = Integer.valueOf(estanteria.getCuerpos());
-    int contador_posiciones = Integer.valueOf(estanteria.getPosiciones());
-    int contador_cuadro_u = Integer.valueOf(estanteria.getCuadroU());
+    int contador_niveles = Integer.valueOf(estanteria.getNiveles());
+    int contador_cuadro = 0;
     int contador_modulos = Integer.valueOf(estanteria.getModulos());
+    int contador_fondo = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // The layout activity_calcular_estanteria_canastillas is associated here
-        setContentView(R.layout.activity_calcular_estanteria_canastillas);
+        setContentView(R.layout.activity_calcular_estanteria_carga);
 
         TextView textView = new TextView(this);
 
-        ViewGroup layout = (ViewGroup) findViewById(R.id.activity_calcular_estanteria_canastillas);
+        ViewGroup layout = (ViewGroup) findViewById(R.id.activity_calcular_estanteria_carga);
         layout.addView(textView);
 
         // find the elements
@@ -74,20 +70,23 @@ public class CalcularEstanteriaCanastillas extends AppCompatActivity implements 
         masCuerpos = (Button) findViewById(R.id.masCuerpos);
         textoCuerposSelec = (TextView) findViewById(R.id.textoCuerposSelec);
 
-        menosPosiciones = (Button) findViewById(R.id.menosPosiciones);
-        masPosiciones = (Button) findViewById(R.id.masPosiciones);
-        textoPosicionesSelec = (TextView) findViewById(R.id.textoPosicionesSelec);
+        menosNiveles = (Button) findViewById(R.id.menosNiveles);
+        masNiveles = (Button) findViewById(R.id.masNiveles);
+        textoNivelesSelec = (TextView) findViewById(R.id.textoNivelesSelec);
 
-        menosCuadroU = (Button) findViewById(R.id.menosCuadroU);
-        masCuadroU = (Button) findViewById(R.id.masCuadroU);
-        textoCuadroUSelec = (TextView) findViewById(R.id.textoCuadroUSelec);
+        menosCuadro = (Button) findViewById(R.id.menosCuadro);
+        masCuadro = (Button) findViewById(R.id.masCuadro);
+        textoCuadroSelec = (TextView) findViewById(R.id.textoCuadroSelec);
 
         menosModulos = (Button) findViewById(R.id.menosModulos);
         masModulos = (Button) findViewById(R.id.masModulos);
         textoModulosSelec = (TextView) findViewById(R.id.textoModulosSelec);
 
+        menosFondo = (Button) findViewById(R.id.menosFondo);
+        masFondo = (Button) findViewById(R.id.masFondo);
+        textoFondoSelec = (TextView) findViewById(R.id.textoFondoSelec);
+
         checkBoxAceroInoxidable = (CheckBox) findViewById(R.id.checkBoxAceroInoxidable);
-        checkBoxCostado = (CheckBox) findViewById(R.id.checkBoxCostado);
         checkBoxInstalacion = (CheckBox) findViewById(R.id.checkBoxInstalacion);
 
         calcularEstCanastillas = (Button) findViewById(R.id.calcularEstCanastillas);
@@ -100,26 +99,27 @@ public class CalcularEstanteriaCanastillas extends AppCompatActivity implements 
         menosCuerpos.setOnClickListener(this);
         masCuerpos.setOnClickListener(this);
 
-        menosPosiciones.setOnClickListener(this);
-        masPosiciones.setOnClickListener(this);
+        menosNiveles.setOnClickListener(this);
+        masNiveles.setOnClickListener(this);
 
-        menosCuadroU.setOnClickListener(this);
-        masCuadroU.setOnClickListener(this);
+        menosCuadro.setOnClickListener(this);
+        masCuadro.setOnClickListener(this);
 
         menosModulos.setOnClickListener(this);
         masModulos.setOnClickListener(this);
 
+        menosFondo.setOnClickListener(this);
+        masFondo.setOnClickListener(this);
+
         checkBoxAceroInoxidable.setOnClickListener(this);
-        checkBoxCostado.setOnClickListener(this);
         checkBoxInstalacion.setOnClickListener(this);
 
         /* Se hace este "setOnFocusChangeListener" con el fin de que con solo seleccionar una de
-         * opciones de los campos de textos, el resultado total de la estanteria se borra.
-         * Ver la funcion "onFocusChange". De este modo se obliga al usuario a actualizar el
-         * resultado presionando el boton CALCULAR  */
+         * opciones de los campos de textos, el resultado total de la estanteria se borra. De este
+         * modo se obliga al usuario a actualizar el resultado presionando el boton CALCULAR  */
 
         calcularEstCanastillas.setOnClickListener(this);
-        
+
     }
 
     @Override
@@ -128,9 +128,9 @@ public class CalcularEstanteriaCanastillas extends AppCompatActivity implements 
         /* Con cualquier cambio en alguno de las entradas el valor de la estantería se borra
          * con esto se obliga al usuario a recalcular luego de alguna modificacion en la cotizacion
          */
+
         textoResultado.setText("-");
 
-        // It is detected which button was pressed and according to this, some changes are performed
         switch (v.getId()) {
             case R.id.menosAltura:
                 if(contador_altura > 0){
@@ -140,7 +140,7 @@ public class CalcularEstanteriaCanastillas extends AppCompatActivity implements 
                 break;
 
             case R.id.masAltura:
-                if(contador_altura < 3) {
+                if(contador_altura < 1) {
                     contador_altura = contador_altura + 1;
                     estanteria.actEstanteriaCanastillas(contador_altura);
                 }
@@ -154,41 +154,37 @@ public class CalcularEstanteriaCanastillas extends AppCompatActivity implements 
                 break;
 
             case R.id.masCuerpos:
-                if(contador_cuerpos < 99) {
+                if(contador_cuerpos < 60) {
                     contador_cuerpos = contador_cuerpos + 1;
                     estanteria.actCuerpos(Integer.toString(contador_cuerpos));
                 }
                 break;
 
-            case R.id.menosPosiciones:
-                if(contador_posiciones > estanteria.getNumPosicionesMin()){
-                    if(contador_posiciones == contador_cuadro_u){
-                        contador_cuadro_u = contador_cuadro_u - 1;
-                        estanteria.actCuadroU(Integer.toString(contador_cuadro_u));
-                    }
-                    contador_posiciones =  contador_posiciones - 1;
-                    estanteria.actPosiciones(Integer.toString(contador_posiciones));
+            case R.id.menosNiveles:
+                if(contador_niveles > estanteria.getNumNivelesMin()){
+                    contador_niveles =  contador_niveles - 1;
+                    estanteria.actNiveles(Integer.toString(contador_niveles));
                 }
                 break;
 
-            case R.id.masPosiciones:
-                if(contador_posiciones < estanteria.getNumPosicionesMax()) {
-                    contador_posiciones = contador_posiciones + 1;
-                    estanteria.actPosiciones(Integer.toString(contador_posiciones));
+            case R.id.masNiveles:
+                if(contador_niveles < estanteria.getNumNivelesMax()) {
+                    contador_niveles = contador_niveles + 1;
+                    estanteria.actNiveles(Integer.toString(contador_niveles));
                 }
                 break;
 
-            case R.id.menosCuadroU:
-                if(contador_cuadro_u > 2){
-                    contador_cuadro_u =  contador_cuadro_u - 1;
-                    estanteria.actCuadroU(Integer.toString(contador_cuadro_u));
+            case R.id.menosCuadro:
+                if(contador_cuadro > 0){
+                    contador_cuadro =  contador_cuadro - 1;
+                    estanteria.actCuadro(contador_cuadro);
                 }
                 break;
 
-            case R.id.masCuadroU:
-                if(contador_cuadro_u < contador_posiciones) {
-                    contador_cuadro_u = contador_cuadro_u + 1;
-                    estanteria.actCuadroU(Integer.toString(contador_cuadro_u));
+            case R.id.masCuadro:
+                if(contador_cuadro < 4) {
+                    contador_cuadro = contador_cuadro + 1;
+                    estanteria.actCuadro(contador_cuadro);
                 }
                 break;
 
@@ -206,21 +202,41 @@ public class CalcularEstanteriaCanastillas extends AppCompatActivity implements 
                 }
                 break;
 
+            case R.id.menosFondo:
+                if(contador_fondo > 1){
+                    contador_fondo =  contador_fondo - 1;
+                    estanteria.actFondo(Integer.toString(contador_fondo));
+                }
+                break;
+
+            case R.id.masFondo:
+                if(contador_fondo < 5) {
+                    contador_fondo = contador_fondo + 1;
+                    estanteria.actFondo(Integer.toString(contador_fondo));
+                }
+                break;
+
+
             case R.id.checkBoxAceroInoxidable:
-                checkBoxCostado.setChecked(false);
+                if(checkBoxAceroInoxidable.isChecked()) {
+                    menosCuadro.setEnabled(false);
+                    masCuadro.setEnabled(false);
+                    contador_cuadro = 5; // Activa 60x90I
+                    estanteria.actCuadro(contador_cuadro);
+                }
+                else {
+                    menosCuadro.setEnabled(true);
+                    masCuadro.setEnabled(true);
+                    contador_cuadro = 2; // Regresa al valor 60x90
+                    estanteria.actCuadro(contador_cuadro);
+                }
                 break;
 
-            case R.id.checkBoxCostado:
-                checkBoxAceroInoxidable.setChecked(false);
-                break;
-
-            // The price of the shelf is calculated here
             case R.id.calcularEstCanastillas:
 
-                // It calculates the amount of elements that are necessary to build the shelf
-                estanteria.calcularCantidades(checkBoxAceroInoxidable.isChecked(),checkBoxCostado.isChecked());
-                // It calculates the price of the shelf
-                estanteria.calcularPrecio(checkBoxAceroInoxidable.isChecked(),checkBoxCostado.isChecked());
+                estanteria.calcularCantidades(checkBoxAceroInoxidable.isChecked());
+                estanteria.calcularPrecio(checkBoxAceroInoxidable.isChecked());
+
                 estanteria.adicionInstalacion(checkBoxInstalacion.isChecked());
                 // It gives format to the price to be displayed and
                 // it displays the calculated price of the shelf
@@ -232,17 +248,23 @@ public class CalcularEstanteriaCanastillas extends AppCompatActivity implements 
                 break;
         }
 
-        // It refreshes the new values of the input parameter (given by the user)
+        // No es necesario actualizar contador_altura ya que este es el mismo que controla los otro
+        // estados
+
+        contador_cuerpos = Integer.valueOf(estanteria.getCuerpos());
+        contador_niveles = Integer.valueOf(estanteria.getNiveles());
+        //contador_cuadro = Integer.valueOf(estanteria.getCuadro());
+        contador_modulos = Integer.valueOf(estanteria.getModulos());
+
         textoAlturaSelec.setText(estanteria.getAltura());
         textoCuerposSelec.setText(estanteria.getCuerpos());
-        textoPosicionesSelec.setText(estanteria.getPosiciones());
-        textoCuadroUSelec.setText(estanteria.getCuadroU());
+        textoNivelesSelec.setText(estanteria.getNiveles());
+        textoCuadroSelec.setText(estanteria.getCuadro());
         textoModulosSelec.setText(estanteria.getModulos());
+        textoFondoSelec.setText(estanteria.getFondo());
 
     }
 
-    // If an additional element is selected, the result field is "deleted" with "-".
-    // In this way, the user has to press the button "Calcular" again.
     @Override
     public void onFocusChange(View v, boolean hasFocus) {
         textoResultado.setText("-");

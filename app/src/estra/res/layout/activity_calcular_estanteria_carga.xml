@@ -7,7 +7,7 @@
 
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
-        android:id="@+id/activity_calcular_estanteria_canastillas"
+        android:id="@+id/activity_calcular_estanteria_carga"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:descendantFocusability="beforeDescendants"
@@ -18,11 +18,11 @@
         android:paddingRight="@dimen/activity_horizontal_margin"
         android:paddingBottom="@dimen/activity_vertical_margin"
 
-        tools:context="com.example.andres.formacajas.CalcularEstanteriaCanastillas">
+        tools:context="com.example.andres.formacajas.CalcularEstanteriaCarga">
 
         <!-- ========================================================
-    ================= Selección de Estructura  ==================
-    ========================================================= -->
+        ================= Selección de Estructura  ==================
+        ========================================================= -->
 
         <!-- Titulo -->
 
@@ -30,10 +30,7 @@
             android:id="@+id/titulo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:text="@string/titulo_canastillas"
+            android:text="@string/titulo_carga"
             android:textSize="@dimen/size_titulos_secciones_variable"></TextView>
 
         <!-- Ingreso Altura -->
@@ -52,9 +49,7 @@
             android:layout_width="@dimen/size_button_variable"
             android:layout_height="@dimen/size_button_variable"
             android:layout_below="@+id/titulo"
-            android:layout_marginLeft="16dp"
             android:layout_marginTop="16dp"
-            android:layout_toEndOf="@+id/textoAltura"
             android:layout_toRightOf="@+id/textoAltura"
             android:padding="0dp"
             android:text="@string/string_boton_menos"
@@ -62,14 +57,12 @@
 
         <TextView
             android:id="@+id/textoAlturaSelec"
-            android:layout_width="@dimen/size_value_layout_variable"
+            android:layout_width="@dimen/size_value_layout_variable_carga"
             android:layout_height="wrap_content"
             android:layout_below="@+id/titulo"
             android:layout_marginTop="16dp"
-            android:layout_toEndOf="@+id/menosAltura"
             android:layout_toRightOf="@+id/menosAltura"
-            android:gravity="center_vertical"
-            android:text="@string/default_altura"
+            android:text="@string/default_altura_carga"
             android:textAlignment="center"
             android:textSize="@dimen/size_text_variable"></TextView>
 
@@ -80,7 +73,6 @@
             android:layout_below="@+id/titulo"
             android:layout_marginTop="16dp"
             android:layout_toRightOf="@+id/textoAlturaSelec"
-            android:gravity="center_horizontal|center"
             android:padding="0dp"
             android:text="@string/string_boton_mas"
             android:textSize="@dimen/size_text_button_variable"></Button>
@@ -92,7 +84,6 @@
             android:layout_width="@dimen/size_text_layout_variable"
             android:layout_height="wrap_content"
             android:layout_below="@+id/textoAltura"
-            android:gravity="center_vertical"
             android:text="@string/string_line_2"
             android:textSize="@dimen/size_text_variable"></TextView>
 
@@ -101,8 +92,6 @@
             android:layout_width="@dimen/size_button_variable"
             android:layout_height="@dimen/size_button_variable"
             android:layout_below="@+id/textoAltura"
-            android:layout_marginLeft="16dp"
-            android:layout_toEndOf="@+id/textoCuerpos"
             android:layout_toRightOf="@+id/textoCuerpos"
             android:padding="0dp"
             android:text="@string/string_boton_menos"
@@ -110,13 +99,11 @@
 
         <TextView
             android:id="@+id/textoCuerposSelec"
-            android:layout_width="@dimen/size_value_layout_variable"
+            android:layout_width="@dimen/size_value_layout_variable_carga"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/textoAlturaSelec"
-            android:layout_toEndOf="@+id/menosCuerpos"
+            android:layout_below="@+id/textoAltura"
             android:layout_toRightOf="@+id/menosCuerpos"
-            android:gravity="center_vertical"
-            android:text="@string/default_cuerpos"
+            android:text="@string/default_cuerpos_carga"
             android:textAlignment="center"
             android:textSize="@dimen/size_text_variable"></TextView>
 
@@ -125,92 +112,87 @@
             android:layout_width="@dimen/size_button_variable"
             android:layout_height="@dimen/size_button_variable"
             android:layout_below="@+id/textoAltura"
-            android:layout_toEndOf="@+id/textoCuerposSelec"
             android:layout_toRightOf="@+id/textoCuerposSelec"
             android:padding="0dp"
             android:text="@string/string_boton_mas"
             android:textSize="@dimen/size_text_button_variable"></Button>
 
-        <!-- Ingreso Posiciones -->
+        <!-- Ingreso Niveles -->
 
         <TextView
-            android:id="@+id/textoPosiciones"
+            android:id="@+id/textoNiveles"
             android:layout_width="@dimen/size_text_layout_variable"
             android:layout_height="wrap_content"
             android:layout_below="@+id/textoCuerpos"
-            android:text="@string/string_line_3"
+            android:text="@string/niveles"
             android:textSize="@dimen/size_text_variable"></TextView>
 
         <Button
-            android:id="@+id/menosPosiciones"
+            android:id="@+id/menosNiveles"
             android:layout_width="@dimen/size_button_variable"
             android:layout_height="@dimen/size_button_variable"
             android:layout_below="@+id/textoCuerpos"
-            android:layout_marginLeft="16dp"
-            android:layout_toEndOf="@+id/textoPosiciones"
-            android:layout_toRightOf="@+id/textoPosiciones"
+            android:layout_toRightOf="@+id/textoNiveles"
             android:padding="0dp"
             android:text="@string/string_boton_menos"
             android:textSize="@dimen/size_text_button_variable"></Button>
 
         <TextView
-            android:id="@+id/textoPosicionesSelec"
-            android:layout_width="@dimen/size_value_layout_variable"
+            android:id="@+id/textoNivelesSelec"
+            android:layout_width="@dimen/size_value_layout_variable_carga"
             android:layout_height="wrap_content"
             android:layout_below="@+id/textoCuerpos"
-            android:layout_toRightOf="@+id/menosPosiciones"
-            android:text="@string/default_posiciones"
+            android:layout_toRightOf="@+id/menosNiveles"
+            android:text="@string/default_niveles_carga"
             android:textAlignment="center"
             android:textSize="@dimen/size_text_variable"></TextView>
 
         <Button
-            android:id="@+id/masPosiciones"
+            android:id="@+id/masNiveles"
             android:layout_width="@dimen/size_button_variable"
             android:layout_height="@dimen/size_button_variable"
             android:layout_below="@+id/textoCuerpos"
-            android:layout_toRightOf="@+id/textoPosicionesSelec"
+            android:layout_toRightOf="@+id/textoNivelesSelec"
             android:padding="0dp"
             android:text="@string/string_boton_mas"
             android:textSize="@dimen/size_text_button_variable"></Button>
 
-        <!-- Ingreso Cuadro U -->
+        <!-- Ingreso Cuadro-->
 
         <TextView
-            android:id="@+id/textoCuadroU"
+            android:id="@+id/textoCuadro"
             android:layout_width="@dimen/size_text_layout_variable"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/textoPosiciones"
-            android:text="@string/string_line_4"
+            android:layout_below="@+id/textoNiveles"
+            android:text="@string/cuadro"
             android:textSize="@dimen/size_text_variable"></TextView>
 
         <Button
-            android:id="@+id/menosCuadroU"
+            android:id="@+id/menosCuadro"
             android:layout_width="@dimen/size_button_variable"
             android:layout_height="@dimen/size_button_variable"
-            android:layout_below="@+id/textoPosiciones"
-            android:layout_marginLeft="16dp"
-            android:layout_toEndOf="@+id/textoCuadroU"
-            android:layout_toRightOf="@+id/textoCuadroU"
+            android:layout_below="@+id/textoNiveles"
+            android:layout_toRightOf="@+id/textoCuadro"
             android:padding="0dp"
             android:text="@string/string_boton_menos"
             android:textSize="@dimen/size_text_button_variable"></Button>
 
         <TextView
-            android:id="@+id/textoCuadroUSelec"
-            android:layout_width="@dimen/size_value_layout_variable"
+            android:id="@+id/textoCuadroSelec"
+            android:layout_width="@dimen/size_value_layout_variable_carga"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/textoPosiciones"
-            android:layout_toRightOf="@+id/menosCuadroU"
-            android:text="@string/default_cuadro_u"
+            android:layout_below="@+id/textoNiveles"
+            android:layout_toRightOf="@+id/menosCuadro"
+            android:text="@string/default_cuadro_carga"
             android:textAlignment="center"
             android:textSize="@dimen/size_text_variable"></TextView>
 
         <Button
-            android:id="@+id/masCuadroU"
+            android:id="@+id/masCuadro"
             android:layout_width="@dimen/size_button_variable"
             android:layout_height="@dimen/size_button_variable"
-            android:layout_below="@+id/textoPosiciones"
-            android:layout_toRightOf="@+id/textoCuadroUSelec"
+            android:layout_below="@+id/textoNiveles"
+            android:layout_toRightOf="@+id/textoCuadroSelec"
             android:padding="0dp"
             android:text="@string/string_boton_mas"
             android:textSize="@dimen/size_text_button_variable"></Button>
@@ -221,7 +203,7 @@
             android:id="@+id/textoModulos"
             android:layout_width="@dimen/size_text_layout_variable"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/textoCuadroU"
+            android:layout_below="@+id/textoCuadro"
             android:text="@string/string_line_5"
             android:textSize="@dimen/size_text_variable"></TextView>
 
@@ -229,8 +211,7 @@
             android:id="@+id/menosModulos"
             android:layout_width="@dimen/size_button_variable"
             android:layout_height="@dimen/size_button_variable"
-            android:layout_below="@+id/textoCuadroU"
-            android:layout_marginLeft="16dp"
+            android:layout_below="@+id/textoCuadro"
             android:layout_toRightOf="@+id/textoModulos"
             android:padding="0dp"
             android:text="@string/string_boton_menos"
@@ -238,11 +219,11 @@
 
         <TextView
             android:id="@+id/textoModulosSelec"
-            android:layout_width="@dimen/size_value_layout_variable"
+            android:layout_width="@dimen/size_value_layout_variable_carga"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/textoCuadroU"
+            android:layout_below="@+id/textoCuadro"
             android:layout_toRightOf="@+id/menosModulos"
-            android:text="@string/default_modulos"
+            android:text="@string/default_modulos_carga"
             android:textAlignment="center"
             android:textSize="@dimen/size_text_variable"></TextView>
 
@@ -250,27 +231,55 @@
             android:id="@+id/masModulos"
             android:layout_width="@dimen/size_button_variable"
             android:layout_height="@dimen/size_button_variable"
-            android:layout_below="@+id/textoCuadroU"
+            android:layout_below="@+id/textoCuadro"
             android:layout_toRightOf="@+id/textoModulosSelec"
             android:padding="0dp"
             android:text="@string/string_boton_mas"
             android:textSize="@dimen/size_text_button_variable"></Button>
 
+        <!-- Ingreso Fondo -->
+
+        <TextView
+            android:id="@+id/textoFondo"
+            android:layout_width="@dimen/size_text_layout_variable"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textoModulos"
+            android:text="@string/fondo"
+            android:textSize="@dimen/size_text_variable"></TextView>
+
+        <Button
+            android:id="@+id/menosFondo"
+            android:layout_width="@dimen/size_button_variable"
+            android:layout_height="@dimen/size_button_variable"
+            android:layout_below="@+id/textoModulos"
+            android:layout_toRightOf="@+id/textoFondo"
+            android:padding="0dp"
+            android:text="@string/string_boton_menos"
+            android:textSize="@dimen/size_text_button_variable"></Button>
+
+        <TextView
+            android:id="@+id/textoFondoSelec"
+            android:layout_width="@dimen/size_value_layout_variable_carga"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textoModulos"
+            android:layout_toRightOf="@+id/menosFondo"
+            android:text="@string/default_fondo_carga"
+            android:textAlignment="center"
+            android:textSize="@dimen/size_text_variable"></TextView>
+
+        <Button
+            android:id="@+id/masFondo"
+            android:layout_width="@dimen/size_button_variable"
+            android:layout_height="@dimen/size_button_variable"
+            android:layout_below="@+id/textoModulos"
+            android:layout_toRightOf="@+id/textoFondoSelec"
+            android:padding="0dp"
+            android:text="@string/string_boton_mas"
+            android:textSize="@dimen/size_text_button_variable"></Button>
+
         <!-- ========================================================
-    ================= Seleccion de accesorios  ==================
-    ========================================================= -->
-
-        <!-- This flavor does not contain these items -->
-
-        <!-- ========================================================
-    ================= Seleccion de canastillas  =================
-    ========================================================= -->
-
-        <!-- This flavor does not contain these boxes -->
-
-        <!-- ========================================================
-    ================== Seleccion de Checkboxes  =================
-    ========================================================= -->
+        ================== Seleccion de Checkboxes  =================
+        ========================================================= -->
 
         <!-- Acero Inoxidable -->
 
@@ -278,19 +287,9 @@
             android:id="@+id/checkBoxAceroInoxidable"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/textoModulos"
+            android:layout_below="@+id/textoFondo"
             android:layout_marginTop="16dp"
             android:text="@string/check_box_acero_inoxidable"
-            android:textSize="@dimen/size_text_variable" />
-
-        <!-- Costado -->
-
-        <CheckBox
-            android:id="@+id/checkBoxCostado"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/checkBoxAceroInoxidable"
-            android:text="@string/check_box_costado"
             android:textSize="@dimen/size_text_variable" />
 
         <!-- Instalación -->
@@ -299,13 +298,13 @@
             android:id="@+id/checkBoxInstalacion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/checkBoxCostado"
+            android:layout_below="@+id/checkBoxAceroInoxidable"
             android:text="@string/check_box_instalacion"
             android:textSize="@dimen/size_text_variable" />
 
         <!-- ========================================================
-    ================== Seleccion de Resultados  =================
-    ========================================================= -->
+        ================== Seleccion de Resultados  =================
+        ========================================================= -->
 
         <!-- Boton Calcular -->
 
@@ -314,11 +313,8 @@
             android:layout_width="@dimen/size_button_calcular_variable"
             android:layout_height="wrap_content"
             android:layout_below="@+id/checkBoxInstalacion"
-            android:layout_centerInParent="false"
             android:layout_centerHorizontal="true"
-            android:layout_gravity="center"
             android:layout_marginTop="16dp"
-            android:gravity="center_vertical|center_horizontal"
             android:text="@string/string_boton_calcular__est_canastillas"
             android:textAllCaps="false"
             android:textSize="@dimen/size_text_variable"></Button>

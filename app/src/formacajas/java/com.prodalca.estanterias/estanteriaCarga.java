@@ -8,7 +8,7 @@ public class estanteriaCarga {
 
     //declaración de atributos
     private String altura, cuerpos, niveles, cuadro, modulos, fondo;
-    private Boolean aceroInoxidable;
+    private Boolean aceroInoxidable, instalacion;
     private int numNivelesMin, numNivelesMax;
 
     private int cant_parales, cant_tornillos_60,

@@ -11,7 +11,7 @@ public class estanteriaCanastillas {
 
     // These parameters are introduced by the user and the amount of elements are calculated according to these parameters
     private String altura, cuerpos, posiciones, cuadroU, modulos;
-    private Boolean aceroInoxidable, costado;
+    private Boolean aceroInoxidable, costado, instalacion;
     private int numPosicionesMin, numPosicionesMax;
 
     // Amount of the elements necessary to build the shelf
@@ -50,7 +50,7 @@ public class estanteriaCanastillas {
 
     // Declaración de constructor. Initial properties of the shelf
     public estanteriaCanastillas(String altura, String cuerpos, String posiciones, String cuadroU,
-                                 String modulos, Boolean aceroInoxidable, Boolean costado) {
+                                 String modulos, Boolean aceroInoxidable, Boolean costado, Boolean instalacion) {
         this.altura = altura;
         this.cuerpos = cuerpos;
         this.posiciones = posiciones;
@@ -58,6 +58,7 @@ public class estanteriaCanastillas {
         this.modulos = modulos;
         this.aceroInoxidable = aceroInoxidable;
         this.costado = costado;
+        this.instalacion = instalacion;
 
         // The shelf starts with a configuration of 1,94 m
         this.numPosicionesMin = 4;
@@ -426,7 +427,7 @@ public class estanteriaCanastillas {
                 this.precio_total_parales + this.precio_total_cuadroU +
                 this.precio_total_travesanos + this.precio_total_tornillos_40 +
                 this.precio_total_tornillos_60 + this.precio_total_tuerca_lujo +
-                this.precio_total_tapon_cuadrado +
+                this.precio_total_tapon_cuadrado + this.precio_total_bota_cuadrada +
 
                 this.precio_total_cuadro_ext_est_1 + this.precio_total_cuadro_ext_est_2 +
                 this.precio_total_cuadro_ext_est_3 + this.precio_total_cuadro_ext_est_4 +
@@ -440,7 +441,16 @@ public class estanteriaCanastillas {
                 this.precio_total_tapa_normatizada;
     }
 
-    // It gives format to the price to be displayed
+    public void adicionInstalacion(Boolean instalacion){
+
+        // Si se selecciona el campo instalacion entonces se adiciona el 5.0% al precio de la estanteria
+        if(instalacion == true){
+            this.precio_total_estanteria = this.precio_total_estanteria * 1.05;
+        }
+
+    }
+
+        // It gives format to the price to be displayed
     public String formatoPrecio(Double precio_num){
         // The "part of interest" of the number is stored (with two decimal positions)
         String precio_string_complete = String.format("%.2f", precio_num);

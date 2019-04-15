@@ -17,6 +17,7 @@
     <string name="default_modulos">1</string>
     <string name="default_resultado">-</string>
 
+    <string name="check_box_instalacion">Instalación</string>
     <string name="check_box_acero_inoxidable">Acero inoxidable</string>
     <string name="check_box_costado">Costado</string>
 
