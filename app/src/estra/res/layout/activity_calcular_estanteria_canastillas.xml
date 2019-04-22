@@ -260,7 +260,162 @@
     ================= Seleccion de accesorios  ==================
     ========================================================= -->
 
-        <!-- This flavor does not contain these items -->
+        <!-- Titulo  -->
+
+        <TextView
+            android:id="@+id/tituloSeccionAccesorios"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textoModulos"
+            android:layout_marginTop="16dp"
+            android:text="@string/titulo_seleccion_accesorios"
+            android:textSize="@dimen/size_titulos_secciones_variable"></TextView>
+
+        <!-- Cuadro ext. est. m. de 1 -->
+
+        <TextView
+            android:id="@+id/cuadroExtEst1"
+            android:layout_width="@dimen/size_accessorio_layout_variable"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tituloSeccionAccesorios"
+            android:layout_marginTop="16dp"
+            android:text="@string/cuadro_ext_est_1"
+            android:textSize="@dimen/size_text_variable"></TextView>
+
+        <EditText
+            android:id="@+id/cuadroExtEst1Selec"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tituloSeccionAccesorios"
+            android:layout_marginTop="16dp"
+            android:layout_toRightOf="@+id/menosModulos"
+            android:background="@null"
+            android:hint="0"
+            android:inputType="number"
+            android:maxLength="6"
+            android:padding="0dp"
+            android:textAlignment="center"
+            android:textSize="@dimen/size_text_variable" />
+
+        <!-- Cuadro ext. est. m. de 2 -->
+
+        <TextView
+            android:id="@+id/cuadroExtEst2"
+            android:layout_width="@dimen/size_accessorio_layout_variable"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cuadroExtEst1"
+            android:text="@string/cuadro_ext_est_2"
+            android:textSize="@dimen/size_text_variable"></TextView>
+
+        <EditText
+            android:id="@+id/cuadroExtEst2Selec"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cuadroExtEst1"
+            android:layout_toRightOf="@+id/menosModulos"
+            android:background="@null"
+            android:hint="0"
+            android:inputType="number"
+            android:maxLength="6"
+            android:padding="0dp"
+            android:textAlignment="center"
+            android:textSize="@dimen/size_text_variable" />
+
+        <!-- Cuadro ext. est. m. de 3 -->
+
+        <TextView
+            android:id="@+id/cuadroExtEst3"
+            android:layout_width="@dimen/size_accessorio_layout_variable"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cuadroExtEst2"
+            android:text="@string/cuadro_ext_est_3"
+            android:textSize="@dimen/size_text_variable"></TextView>
+
+        <EditText
+            android:id="@+id/cuadroExtEst3Selec"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cuadroExtEst2"
+            android:layout_toRightOf="@+id/menosModulos"
+            android:background="@null"
+            android:hint="0"
+            android:inputType="number"
+            android:maxLength="6"
+            android:padding="0dp"
+            android:textAlignment="center"
+            android:textSize="@dimen/size_text_variable" />
+
+        <!-- Cuadro ext. est. m. de 4 -->
+
+        <TextView
+            android:id="@+id/cuadroExtEst4"
+            android:layout_width="@dimen/size_accessorio_layout_variable"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cuadroExtEst3"
+            android:text="@string/cuadro_ext_est_4"
+            android:textSize="@dimen/size_text_variable"></TextView>
+
+        <EditText
+            android:id="@+id/cuadroExtEst4Selec"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cuadroExtEst3"
+            android:layout_toRightOf="@+id/menosModulos"
+            android:background="@null"
+            android:hint="0"
+            android:inputType="number"
+            android:maxLength="6"
+            android:padding="0dp"
+            android:textAlignment="center"
+            android:textSize="@dimen/size_text_variable" />
+
+        <!-- Cuadro ext. est. m. de 5 -->
+
+        <TextView
+            android:id="@+id/cuadroExtEst5"
+            android:layout_width="@dimen/size_accessorio_layout_variable"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cuadroExtEst4"
+            android:text="@string/cuadro_ext_est_5"
+            android:textSize="@dimen/size_text_variable"></TextView>
+
+        <EditText
+            android:id="@+id/cuadroExtEst5Selec"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cuadroExtEst4"
+            android:layout_toRightOf="@+id/menosModulos"
+            android:background="@null"
+            android:hint="0"
+            android:inputType="number"
+            android:maxLength="6"
+            android:padding="0dp"
+            android:textAlignment="center"
+            android:textSize="@dimen/size_text_variable" />
+
+        <!-- Travesaño extensión modular -->
+
+        <TextView
+            android:id="@+id/travesanoEtxModular"
+            android:layout_width="@dimen/size_accessorio_layout_variable"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cuadroExtEst5"
+            android:text="@string/travesano_ext_modular"
+            android:textSize="@dimen/size_text_variable"></TextView>
+
+        <EditText
+            android:id="@+id/travesanoEtxModularSelec"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cuadroExtEst5"
+            android:layout_toRightOf="@+id/menosModulos"
+            android:background="@null"
+            android:hint="0"
+            android:inputType="number"
+            android:maxLength="6"
+            android:padding="0dp"
+            android:textAlignment="center"
+            android:textSize="@dimen/size_text_variable" />
 
         <!-- ========================================================
     ================= Seleccion de canastillas  =================
@@ -278,7 +433,7 @@
             android:id="@+id/checkBoxAceroInoxidable"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/textoModulos"
+            android:layout_below="@+id/travesanoEtxModular"
             android:layout_marginTop="16dp"
             android:text="@string/check_box_acero_inoxidable"
             android:textSize="@dimen/size_text_variable" />

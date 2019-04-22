@@ -36,6 +36,13 @@ public class CalcularEstanteriaCanastillas extends AppCompatActivity implements 
     Button masModulos;
     TextView textoModulosSelec;
 
+    EditText cuadroExtEst1Selec;
+    EditText cuadroExtEst2Selec;
+    EditText cuadroExtEst3Selec;
+    EditText cuadroExtEst4Selec;
+    EditText cuadroExtEst5Selec;
+    EditText travesanoEtxModularSelec;
+
     CheckBox checkBoxAceroInoxidable;
     CheckBox checkBoxCostado;
     CheckBox checkBoxInstalacion;
@@ -86,6 +93,13 @@ public class CalcularEstanteriaCanastillas extends AppCompatActivity implements 
         masModulos = (Button) findViewById(R.id.masModulos);
         textoModulosSelec = (TextView) findViewById(R.id.textoModulosSelec);
 
+        cuadroExtEst1Selec = (EditText) findViewById(R.id.cuadroExtEst1Selec);
+        cuadroExtEst2Selec = (EditText) findViewById(R.id.cuadroExtEst2Selec);
+        cuadroExtEst3Selec = (EditText) findViewById(R.id.cuadroExtEst3Selec);
+        cuadroExtEst4Selec = (EditText) findViewById(R.id.cuadroExtEst4Selec);
+        cuadroExtEst5Selec = (EditText) findViewById(R.id.cuadroExtEst5Selec);
+        travesanoEtxModularSelec = (EditText) findViewById(R.id.travesanoEtxModularSelec);
+
         checkBoxAceroInoxidable = (CheckBox) findViewById(R.id.checkBoxAceroInoxidable);
         checkBoxCostado = (CheckBox) findViewById(R.id.checkBoxCostado);
         checkBoxInstalacion = (CheckBox) findViewById(R.id.checkBoxInstalacion);
@@ -117,6 +131,13 @@ public class CalcularEstanteriaCanastillas extends AppCompatActivity implements 
          * opciones de los campos de textos, el resultado total de la estanteria se borra.
          * Ver la funcion "onFocusChange". De este modo se obliga al usuario a actualizar el
          * resultado presionando el boton CALCULAR  */
+
+        cuadroExtEst1Selec.setOnFocusChangeListener(this);
+        cuadroExtEst2Selec.setOnFocusChangeListener(this);
+        cuadroExtEst3Selec.setOnFocusChangeListener(this);
+        cuadroExtEst4Selec.setOnFocusChangeListener(this);
+        cuadroExtEst5Selec.setOnFocusChangeListener(this);
+        travesanoEtxModularSelec.setOnFocusChangeListener(this);
 
         calcularEstCanastillas.setOnClickListener(this);
         
@@ -216,6 +237,15 @@ public class CalcularEstanteriaCanastillas extends AppCompatActivity implements 
 
             // The price of the shelf is calculated here
             case R.id.calcularEstCanastillas:
+
+                // This part goes through all fields related to additional elements of the shelf and
+                // it refreshes the current amount selected by the user
+                estanteria.actCuadroExtEst1Selec(cuadroExtEst1Selec.getText().toString());
+                estanteria.actCuadroExtEst2Selec(cuadroExtEst2Selec.getText().toString());
+                estanteria.actCuadroExtEst3Selec(cuadroExtEst3Selec.getText().toString());
+                estanteria.actCuadroExtEst4Selec(cuadroExtEst4Selec.getText().toString());
+                estanteria.actCuadroExtEst5Selec(cuadroExtEst5Selec.getText().toString());
+                estanteria.actTravesanoEtxModularSelec(travesanoEtxModularSelec.getText().toString());
 
                 // It calculates the amount of elements that are necessary to build the shelf
                 estanteria.calcularCantidades(checkBoxAceroInoxidable.isChecked(),checkBoxCostado.isChecked());
