@@ -260,19 +260,101 @@
     ================= Seleccion de accesorios  ==================
     ========================================================= -->
 
-        <!-- This flavor does not contain these items -->
+        <!-- This flavour does not have checkboxes-->
 
         <!-- ========================================================
     ================= Seleccion de canastillas  =================
     ========================================================= -->
 
-        <!-- This flavor does not contain these boxes -->
+        <!-- Titulo  -->
+
+        <TextView
+            android:id="@+id/tituloSeccionCanastillas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textoModulos"
+            android:layout_marginTop="16dp"
+            android:text="@string/titulo_seleccion_canastillas"
+            android:textSize="@dimen/size_titulos_secciones_variable"></TextView>
+
+        <!-- Canastillas de 13 cm cerrada -->
+
+        <TextView
+            android:id="@+id/canastillas13Cerrada"
+            android:layout_width="@dimen/size_accessorio_layout_variable"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tituloSeccionCanastillas"
+            android:text="@string/canastillas_13_cerrada"
+            android:textSize="@dimen/size_text_variable"></TextView>
+
+        <EditText
+            android:id="@+id/canastillas13CerradaSelec"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tituloSeccionCanastillas"
+            android:layout_toRightOf="@+id/menosModulos"
+            android:background="@null"
+            android:hint="0"
+            android:inputType="number"
+            android:maxLength="6"
+            android:padding="0dp"
+            android:textAlignment="center"
+            android:textSize="@dimen/size_text_variable" />
+
+
+        <!-- Canastillas de 25 cm cerrada -->
+
+        <TextView
+            android:id="@+id/canastillas25Cerrada"
+            android:layout_width="@dimen/size_accessorio_layout_variable"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/canastillas13Cerrada"
+            android:text="@string/canastillas_25_cerrada"
+            android:textSize="@dimen/size_text_variable"></TextView>
+
+        <EditText
+            android:id="@+id/canastillas25CerradaSelec"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/canastillas13Cerrada"
+            android:layout_toRightOf="@+id/menosModulos"
+            android:background="@null"
+            android:hint="0"
+            android:inputType="number"
+            android:maxLength="6"
+            android:padding="0dp"
+            android:textAlignment="center"
+            android:textSize="@dimen/size_text_variable" />
+
+        <!-- Canastillas de 41 cm cerrada -->
+
+        <TextView
+            android:id="@+id/canastillas41Cerrada"
+            android:layout_width="@dimen/size_accessorio_layout_variable"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/canastillas25Cerrada"
+            android:text="@string/canastillas_41_cerrada"
+            android:textSize="@dimen/size_text_variable"></TextView>
+
+        <EditText
+            android:id="@+id/canastillas41CerradaSelec"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/canastillas25Cerrada"
+            android:layout_toRightOf="@+id/menosModulos"
+            android:background="@null"
+            android:hint="0"
+            android:inputType="number"
+            android:maxLength="6"
+            android:padding="0dp"
+            android:textAlignment="center"
+            android:textSize="@dimen/size_text_variable" />
 
         <!-- ========================================================
     ================== Seleccion de Checkboxes  =================
     ========================================================= -->
 
-        <!-- This flavor does not contain these selectors -->
+        <!-- This flavour does not have checkboxes-->
 
         <!-- ========================================================
     ================== Seleccion de Resultados  =================
@@ -284,7 +366,7 @@
             android:id="@+id/calcularEstCanastillas"
             android:layout_width="@dimen/size_button_calcular_variable"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/masModulos"
+            android:layout_below="@+id/canastillas41CerradaSelec"
             android:layout_centerInParent="false"
             android:layout_centerHorizontal="true"
             android:layout_gravity="center"

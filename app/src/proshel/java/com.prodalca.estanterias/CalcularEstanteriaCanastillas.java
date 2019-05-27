@@ -36,6 +36,10 @@ public class CalcularEstanteriaCanastillas extends AppCompatActivity implements 
     Button masModulos;
     TextView textoModulosSelec;
 
+    EditText canastillas13CerradaSelec;
+    EditText canastillas25CerradaSelec;
+    EditText canastillas41CerradaSelec;
+
     Button calcularEstCanastillas;
     TextView textoResultado;
 
@@ -82,6 +86,10 @@ public class CalcularEstanteriaCanastillas extends AppCompatActivity implements 
         masModulos = (Button) findViewById(R.id.masModulos);
         textoModulosSelec = (TextView) findViewById(R.id.textoModulosSelec);
 
+        canastillas13CerradaSelec = (EditText) findViewById(R.id.canastillas13CerradaSelec);
+        canastillas25CerradaSelec = (EditText) findViewById(R.id.canastillas25CerradaSelec);
+        canastillas41CerradaSelec = (EditText) findViewById(R.id.canastillas41CerradaSelec);
+
         calcularEstCanastillas = (Button) findViewById(R.id.calcularEstCanastillas);
         textoResultado = (TextView) findViewById(R.id.textoResultado);
 
@@ -105,6 +113,10 @@ public class CalcularEstanteriaCanastillas extends AppCompatActivity implements 
          * opciones de los campos de textos, el resultado total de la estanteria se borra.
          * Ver la funcion "onFocusChange". De este modo se obliga al usuario a actualizar el
          * resultado presionando el boton CALCULAR  */
+
+        canastillas13CerradaSelec.setOnFocusChangeListener(this);
+        canastillas25CerradaSelec.setOnFocusChangeListener(this);
+        canastillas41CerradaSelec.setOnFocusChangeListener(this);
 
         calcularEstCanastillas.setOnClickListener(this);
         
@@ -196,6 +208,12 @@ public class CalcularEstanteriaCanastillas extends AppCompatActivity implements 
 
             // The price of the shelf is calculated here
             case R.id.calcularEstCanastillas:
+
+                // This part goes through all fields related to additional elements of the shelf and
+                // it refreshes the current amount selected by the user
+                estanteria.actCanastilla13Cerrada(canastillas13CerradaSelec.getText().toString());
+                estanteria.actCanastilla25Cerrada(canastillas25CerradaSelec.getText().toString());
+                estanteria.actCanastilla41Cerrada(canastillas41CerradaSelec.getText().toString());
 
                 //TODO: Hardcoded input for functions. Look for a better solution
                 // It calculates the amount of elements that are necessary to build the shelf
